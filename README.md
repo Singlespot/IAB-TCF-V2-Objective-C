@@ -8,8 +8,10 @@ IAB Transparency and Consent Framework consent string decoder in Objective-C
 ```Objective-C
 SPTIabTCFModel *model = [SPTIabConsentStringParser parseConsentString:<A_CONSENT_STRING>];
 ```
-⚠️ Purposes and Vendors consents are decoded as succession of "0" ans "1" string to be compliant with IAB TCF v1.0 mobile. 
-🚀 **Coming soon** : 
+⚠️ Purposes and Vendors consents are decoded as succession of "0" ans "1" string to be compliant with IAB TCF v1.0 mobile...
+
+
+# Coming soon 🚀 
 - Model will include ***[model isConsentGivenForID:(int)stuffID]*** 
 - Maybe a coder if needed (or if someone wants to do it 😊)
 
