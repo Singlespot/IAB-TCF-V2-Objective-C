@@ -2,8 +2,11 @@
 IAB Transparency and Consent Framework consent string decoder in Objective-C
 
 # Use
-## Copy files
-## Use the following code to obtain a model with all the property of IAB Transparency and Consent Framework v1.1 or v2
+### 1.Copy files
+Copy all files in your project.
+
+## 2.Code
+Use the following code to obtain a model with all the property of IAB Transparency and Consent Framework v1.1 or v2
 
 ```Objective-C
 SPTIabTCFModel *model = [SPTIabConsentStringParser parseConsentString:<A_CONSENT_STRING>];
