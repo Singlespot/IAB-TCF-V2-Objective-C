@@ -44,6 +44,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (retain, nonatomic) NSString * publisherTCParsedCustomPurposesConsents;
 @property (retain, nonatomic) NSString * publisherTCParsedCustomPurposesLegitmateInterest;
 
+
+- (BOOL)isVendorConsentGivenFor:(int)vendorId;
+- (BOOL)isVendorLegitInterestGivenFor:(int)vendorId;
+- (BOOL)isPurposeConsentGivenFor:(int)purposeId;
+- (BOOL)isPurposeLegitInterestGivenFor:(int)purposeId;
+- (BOOL)isVendorDiscloseFor:(int)vendorId;
+- (BOOL)isVendorAllowedFor:(int)vendorId;
+- (BOOL)isPublisherPurposeConsentGivenFor:(int)purposeId;
+- (BOOL)isPublisherPurposeLegitInterestGivenFor:(int)purposeId;
+- (BOOL)isPublisherCustomPurposeConsentGivenFor:(int)purposeId;
+- (BOOL)isPublisherCustomPurposeLegitInterestGivenFor:(int)purposeId;
+
 - (NSDictionary *)asJson;
 
 @end

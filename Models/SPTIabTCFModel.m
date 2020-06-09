@@ -10,6 +10,54 @@
 
 @implementation SPTIabTCFModel
 
+- (BOOL)isVendorConsentGivenFor:(int)vendorId {
+    return [self booleanInBitString:self.parsedVendorsConsents forId:vendorId];
+}
+
+- (BOOL)isVendorLegitInterestGivenFor:(int)vendorId {
+    return [self booleanInBitString:self.parsedVendorsLegitmateInterest forId:vendorId];
+}
+
+- (BOOL)isPurposeConsentGivenFor:(int)purposeId {
+    return [self booleanInBitString:self.parsedPurposesConsents forId:purposeId];
+}
+
+- (BOOL)isPurposeLegitInterestGivenFor:(int)purposeId {
+    return [self booleanInBitString:self.parsedPurposesLegitmateInterest forId:purposeId];
+}
+
+- (BOOL)isVendorDiscloseFor:(int)vendorId {
+    return [self booleanInBitString:self.parsedDisclosedVendors forId:vendorId];
+}
+
+- (BOOL)isVendorAllowed:(int)vendorId {
+    return [self booleanInBitString:self.parsedAllowedVendors forId:vendorId];
+}
+
+- (BOOL)isPublisherPurposeConsentGivenFor:(int)purposeId {
+    return [self booleanInBitString:self.publisherTCParsedPurposesConsents forId:purposeId];
+}
+
+- (BOOL)isPublisherPurposeLegitInterestGivenFor:(int)purposeId {
+    return [self booleanInBitString:self.publisherTCParsedPurposesLegitmateInterest forId:purposeId];
+}
+
+- (BOOL)isPublisherCustomPurposeConsentGivenFor:(int)purposeId {
+    return [self booleanInBitString:self.publisherTCParsedCustomPurposesConsents forId:purposeId];
+}
+
+- (BOOL)isPublisherCustomPurposeLegitInterestGivenFor:(int)purposeId {
+    return [self booleanInBitString:self.publisherTCParsedCustomPurposesLegitmateInterest forId:purposeId];
+}
+
+- (BOOL)booleanInBitString:(NSString *)bitSstring forId:(int)index {
+    if (!bitSstring || bitSstring.length == 0 || bitSstring.length < index) {
+        return NO;
+    }
+    
+    return [[bitSstring substringWithRange:NSMakeRange(index-1, 1)] boolValue];
+}
+
 - (NSDictionary *)asJson {
     
     NSMutableDictionary * result = [NSMutableDictionary new];
