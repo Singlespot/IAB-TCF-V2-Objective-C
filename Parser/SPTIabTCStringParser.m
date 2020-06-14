@@ -6,7 +6,7 @@
 //  Copyright © 2020 Alexandre Fortoul. All rights reserved.
 //
 
-#import "SPTIabConsentStringParser.h"
+#import "SPTIabTCStringParser.h"
 #import "SPTIabTCFUtils.h"
 #import "SPTIabTCFConstants.h"
 #import "SPTIabPublisherRestriction.h"
@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
 
 @end
 
-@implementation SPTIabConsentStringParser
+@implementation SPTIabTCStringParser
 
 + (SPTIabTCFModel *)parseConsentString:(NSString *)consentString{
     

@@ -30,7 +30,7 @@
     return [self booleanInBitString:self.parsedDisclosedVendors forId:vendorId];
 }
 
-- (BOOL)isVendorAllowed:(int)vendorId {
+- (BOOL)isVendorAllowedFor:(int)vendorId {
     return [self booleanInBitString:self.parsedAllowedVendors forId:vendorId];
 }
 

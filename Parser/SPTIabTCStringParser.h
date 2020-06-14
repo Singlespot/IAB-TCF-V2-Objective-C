@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SPTIabConsentStringParser : NSObject
+@interface SPTIabTCStringParser : NSObject
 
 + (SPTIabTCFModel *)parseConsentString:(NSString *)consentString;
 
