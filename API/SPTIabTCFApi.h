@@ -11,6 +11,7 @@
 #import "SPTIabTCFv1StorageProtocol.h"
 #import "SPTIabTCFv2StorageProtocol.h"
 #import "SPTSinglespotStorageProtocol.h"
+#import "SPTIabTCStringParser.h"
 
 /**
  Object that provides the interface for storing and retrieving GDPR-related information
@@ -24,6 +25,7 @@
 
 - (instancetype)initWithUserDefault:(NSUserDefaults *)userDefs;
 
+- (SPTIabTCFModel *)decodeTCString:(NSString *)tcString;
 /**
  The consent string passed as a websafe base64-encoded string.
  */
@@ -103,6 +105,18 @@ Returns true if user consent has been given to vendor for the specified consent 
 @property (assign, nonatomic) BOOL purposeOneTreatment;
 @property (assign, nonatomic) BOOL useNonStandardStack;
 @property (assign, nonatomic) BOOL isServiceSpecific;
+
+- (BOOL)isVendorLegitimateInterestGivenFor:(int)vendorId;
+- (BOOL)isPurposeLegitimateInterestGivenFor:(int)vendorId;
+
+- (BOOL)isSpecialFeatureOptedInFor:(int)specialFeatureId;
+
+- (BOOL)isVendorDiscloseFor:(int)vendorId;
+- (BOOL)isVendorAllowedFor:(int)vendorId;
+- (BOOL)isPublisherPurposeConsentGivenFor:(int)vendorId;
+- (BOOL)isPublisherPurposeLegitimateInterestGivenFor:(int)vendorId;
+- (BOOL)isPublisherCustomPurposeConsentGivenFor:(int)vendorId;
+- (BOOL)isPublisherCustomPurposeLegitimateInterestGivenFor:(int)vendorId;
 
 /**
  The object that provides all the GDPR-related data for further processing.

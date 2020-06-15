@@ -4,7 +4,6 @@
 //
 
 #import "SPTIabTCFv1StorageUserDefaults.h"
-#import "SPTIabTCFStorageKeys.h"
 
 NSString *const SPT_IABConsent_SubjectToGDPRKey = @"IABConsent_SubjectToGDPR";
 NSString *const SPT_IABConsent_ConsentStringKey = @"IABConsent_ConsentString";

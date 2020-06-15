@@ -49,6 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isVendorLegitInterestGivenFor:(int)vendorId;
 - (BOOL)isPurposeConsentGivenFor:(int)purposeId;
 - (BOOL)isPurposeLegitInterestGivenFor:(int)purposeId;
+- (BOOL)isSpecialFeatureOptedInFor:(int)specialFeatureId;
 - (BOOL)isVendorDiscloseFor:(int)vendorId;
 - (BOOL)isVendorAllowedFor:(int)vendorId;
 - (BOOL)isPublisherPurposeConsentGivenFor:(int)purposeId;

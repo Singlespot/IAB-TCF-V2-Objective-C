@@ -9,7 +9,6 @@
 #import "SPTIabTCFApi.h"
 #import "SPTIabTCFv1StorageUserDefaults.h"
 #import "SPTIabTCFv2StorageUserDefaults.h"
-#import "SPTIabTCStringParser.h"
 
 @interface SPTIabTCFApi()
 @property (nonatomic, retain, readwrite) SPTIabTCFModel *tcModel;
@@ -248,6 +247,11 @@
     self.v2DataStorage.isServiceSpecific = isServiceSpecific;
 }
 
+
+- (BOOL)isSpecialFeatureOptedInFor:(int)specialFeatureId {
+    SPTIabTCFModel *model = [SPTIabTCStringParser parseConsentString:self.consentString];
+    return [model isSpecialFeatureOptedInFor:specialFeatureId];
+}
 
 - (BOOL)isVendorDiscloseFor:(int)vendorId {
     SPTIabTCFModel *model = [SPTIabTCStringParser parseConsentString:self.consentString];

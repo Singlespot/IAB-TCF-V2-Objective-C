@@ -10,6 +10,8 @@
 
 @implementation SPTIabTCFModel
 
+
+
 - (BOOL)isVendorConsentGivenFor:(int)vendorId {
     return [self booleanInBitString:self.parsedVendorsConsents forId:vendorId];
 }
@@ -24,6 +26,10 @@
 
 - (BOOL)isPurposeLegitInterestGivenFor:(int)purposeId {
     return [self booleanInBitString:self.parsedPurposesLegitmateInterest forId:purposeId];
+}
+
+- (BOOL)isSpecialFeatureOptedInFor:(int)specialFeatureId {
+     return [self booleanInBitString:self.specialFeatureOptIns forId:specialFeatureId];
 }
 
 - (BOOL)isVendorDiscloseFor:(int)vendorId {

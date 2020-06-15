@@ -4,7 +4,6 @@
 //
 
 #import "SPTIabTCFv2StorageUserDefaults.h"
-#import "SPTIabTCFStorageKeys.h"
 
 NSString *const SPT_IABTCF_CmpSdkID = @"IABTCF_CmpSdkID";
 NSString *const SPT_IABTCF_CmpSdkVersion = @"IABTCF_CmpSdkVersion";
