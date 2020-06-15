@@ -68,6 +68,9 @@
  */
 @property (nonatomic, retain, readonly) NSString *parsedPurposeConsents;
 
+//- (void)setParsedVendorConsents:(NSString *)parsedVendorConsents forV1:(BOOL)forV1;
+//- (void)setParsedPurposeConsents:(NSString *)parsedPurposeConsents forV1:(BOOL)forV1;
+
 /**
 Returns true if user consent has been given to vendor for the specified consent string
 */

@@ -40,6 +40,10 @@
     return _v2DataStorage;
 }
 
+- (SPTIabTCFModel *)decodeTCString:(NSString *)tcString {
+    return [SPTIabTCStringParser parseConsentString:tcString];
+}
+
 -(NSString *)consentString {
     NSString *v1String = self.v1DataStorage.consentString;
     NSString *v2String = self.v2DataStorage.tcString;
@@ -108,14 +112,14 @@
     }
 }
 
-- (void)setParsedVendorConsents:(NSString *)parsedVendorConsents forV1:(BOOL)forV1 {
-    if (forV1) {
-        self.v1DataStorage.parsedVendorConsents = parsedVendorConsents;
-    }
-    else {
-        self.v2DataStorage.parsedVendorsConsents = parsedVendorConsents;
-    }
-}
+//- (void)setParsedVendorConsents:(NSString *)parsedVendorConsents forV1:(BOOL)forV1 {
+//    if (forV1) {
+//        self.v1DataStorage.parsedVendorConsents = parsedVendorConsents;
+//    }
+//    else {
+//        self.v2DataStorage.parsedVendorsConsents = parsedVendorConsents;
+//    }
+//}
 
 -(NSString *)parsedPurposeConsents {
     NSString *v1String = self.v1DataStorage.parsedPurposeConsents;
@@ -128,14 +132,14 @@
     }
 }
 
-- (void)setParsedPurposeConsents:(NSString *)parsedPurposeConsents forV1:(BOOL)forV1 {
-    if (forV1) {
-        self.v1DataStorage.parsedPurposeConsents = parsedPurposeConsents;
-    }
-    else {
-        self.v2DataStorage.parsedPurposesConsents = parsedPurposeConsents;
-    }
-}
+//- (void)setParsedPurposeConsents:(NSString *)parsedPurposeConsents forV1:(BOOL)forV1 {
+//    if (forV1) {
+//        self.v1DataStorage.parsedPurposeConsents = parsedPurposeConsents;
+//    }
+//    else {
+//        self.v2DataStorage.parsedPurposesConsents = parsedPurposeConsents;
+//    }
+//}
 
 - (BOOL)isVendorConsentGivenFor:(int)vendorId {
     return [self isVendorConsentGivenFor:vendorId inConsentString:self.consentString];
