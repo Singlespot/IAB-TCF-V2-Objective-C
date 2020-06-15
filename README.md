@@ -1,7 +1,7 @@
 # IAB-TCF-V2-Objective-C
-IAB Transparency and Consent Framework consent string decoder in Objective-C
+IAB Transparency and Consent Framework consent string decoder in Objective-C (and by extension in Swift) compliant with both IAB TCF mobile v1.0 & v2.0, for any IABConsentString
 
-# Usage
+## Usage
 ### 1.Copy files
 Copy all files in your project.
 
@@ -57,6 +57,6 @@ SPTIabTCFModel *model = [[SPTIabTCFApi new] decodeTCString:<aTCString>];
 This model has the same methods as defined in [1. Reading consent from a localy stored TCString](#readingConsent) to interpret consents.
 
 
-# Improvement 🚀 
+## Improvement 🚀 
 - A coder if needed (or if someone wants to do it 😊)
 
