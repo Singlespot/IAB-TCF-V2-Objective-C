@@ -112,6 +112,8 @@ Returns true if user consent has been given to vendor for the specified consent 
 - (BOOL)isVendorLegitimateInterestGivenFor:(int)vendorId;
 - (BOOL)isPurposeLegitimateInterestGivenFor:(int)vendorId;
 
+- (PublisherRestrictionType)publisherRestrictionTypeForVendor:(int)vendorId forPurpose:(int)purposeId;
+
 - (BOOL)isSpecialFeatureOptedInFor:(int)specialFeatureId;
 
 - (BOOL)isVendorDiscloseFor:(int)vendorId;

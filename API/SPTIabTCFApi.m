@@ -89,6 +89,9 @@
         self.v2DataStorage.publisherTCParsedPurposesLegitmateInterest = model.publisherTCParsedPurposesLegitmateInterest;
         self.v2DataStorage.publisherTCParsedCustomPurposesConsents = model.publisherTCParsedCustomPurposesConsents;
         self.v2DataStorage.publisherTCParsedCustomPurposesLegitmateInterest = model.publisherTCParsedCustomPurposesLegitmateInterest;
+        for (SPTIabPublisherRestriction *pubRest in model.publisherRestrictions) {
+            [self.v2DataStorage setPublisherRestrictions:pubRest.parsedVendors ForPurposeId:pubRest.purposeId];
+        }
     }
 }
 
@@ -249,6 +252,11 @@
 
 - (void)setIsServiceSpecific:(BOOL)isServiceSpecific {
     self.v2DataStorage.isServiceSpecific = isServiceSpecific;
+}
+
+- (PublisherRestrictionType)publisherRestrictionTypeForVendor:(int)vendorId forPurpose:(int)purposeId {
+    SPTIabTCFModel *model = [SPTIabTCStringParser parseConsentString:self.consentString];
+    return [model publisherRestrictionTypeForVendor:vendorId forPurpose:purposeId];
 }
 
 

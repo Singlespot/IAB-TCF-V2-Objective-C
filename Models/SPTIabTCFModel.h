@@ -57,6 +57,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isPublisherCustomPurposeConsentGivenFor:(int)purposeId;
 - (BOOL)isPublisherCustomPurposeLegitInterestGivenFor:(int)purposeId;
 
+- (PublisherRestrictionType)publisherRestrictionTypeForVendor:(int)vendorId forPurpose:(int)purposeId;
+
 - (NSDictionary *)asJson;
 
 @end

@@ -56,6 +56,22 @@
     return [self booleanInBitString:self.publisherTCParsedCustomPurposesLegitmateInterest forId:purposeId];
 }
 
+- (PublisherRestrictionType)publisherRestrictionTypeForVendor:(int)vendorId forPurpose:(int)purposeId {
+    
+    NSString *parsedVendorsPubRest = @"";
+    for (SPTIabPublisherRestriction *pubRest in self.publisherRestrictions) {
+        if (pubRest.purposeId == purposeId) {
+            parsedVendorsPubRest =  pubRest.parsedVendors;
+        }
+    }
+    if (!parsedVendorsPubRest || parsedVendorsPubRest.length == 0 || parsedVendorsPubRest.length < vendorId) {
+        return Restriction_Undefined;
+    }
+    NSInteger restIntvalue = [[parsedVendorsPubRest substringWithRange:NSMakeRange(vendorId-1, 1)] integerValue];
+    
+    return restIntvalue;
+}
+
 - (BOOL)booleanInBitString:(NSString *)bitSstring forId:(int)index {
     if (!bitSstring || bitSstring.length == 0 || bitSstring.length < index) {
         return NO;
