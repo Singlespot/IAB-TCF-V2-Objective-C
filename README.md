@@ -1,5 +1,5 @@
 # IAB-TCF-V2-Objective-C
-IAB Transparency and Consent Framework consent string decoder in Objective-C (and by extension in Swift) compliant with both IAB TCF mobile v1.0 & v2.0, for any IABConsentString
+IAB Transparency and Consent Framework consent string decoder in Objective-C (and by extension in Swift) compliant with both IAB TCF mobile [v1.1](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Consent%20string%20and%20vendor%20list%20formats%20v1.1%20Final.md) & [v2.0](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20Consent%20string%20and%20vendor%20list%20formats%20v2.md#tc-string-format), for any IABConsentString
 
 ## Usage
 ### 1.Copy files
