@@ -16,8 +16,7 @@
 
 @implementation SPTIabTCFApi
 
-- (instancetype)initWithUserDefault:(NSUserDefaults *)userDefs
-{
+- (instancetype)initWithUserDefault:(NSUserDefaults *)userDefs {
     self = [super init];
     if (self) {
         _v1DataStorage = [[SPTIabTCFv1StorageUserDefaults alloc] initWithUserDefault:userDefs];
