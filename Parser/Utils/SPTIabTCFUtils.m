@@ -47,7 +47,7 @@
         return 0;
     }
     
-    int bit = 1;
+    NSInteger bit = 1;
     NSInteger total = 0;
     
     for (int i=startIndex + totalOffset - 1; i>=startIndex; i--) {
