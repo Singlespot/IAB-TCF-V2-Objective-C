@@ -71,9 +71,8 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
         NSString *segString = segmentsStrings[i];
         [[self class] completeModel:model forType:DecodeStringVendorsDisclosed withVendorsString:segString];
         [[self class] completeModel:model forType:DecodeStringVendorsAllowed withVendorsString:segString];
-        [[self class] completeModel:model forType:DecodeStringVendorsAllowed withVendorsString:segString];
+        [[self class] completeModel:model withPublisherPurposesTransparencyConsent:segString];
     }
-    
 
     return model;
 }
@@ -104,6 +103,7 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
         model.policyVersion = [SPTIabTCFUtils BinaryToDecimal:binaryCharBuffer fromIndex:POLICY_VERSION_BIT_OFFSET length:POLICY_VERSION_BIT_LENGTH];
         model.isServiceSpecific = [SPTIabTCFUtils BinaryToBoolean:binaryCharBuffer atIndex:IS_SERVICE_SPECIFIC_BIT];
         model.useNonStandardStack = [SPTIabTCFUtils BinaryToBoolean:binaryCharBuffer atIndex:USE_NON_STANDART_STACK_BIT];
+        model.specialFeatureOptIns = [[self class] decodeBitChainStringFromBinary:binaryCharBuffer fromIndex:SPECIAL_FEATURE_OPTINS_BIT_OFFSET length:SPECIAL_FEATURE_OPTINS_BIT_LENGHT];
         model.parsedPurposesConsents = [[self class] decodeBitChainStringFromBinary:binaryCharBuffer fromIndex:PURPOSES_CONSENT_V2_BIT_OFFSET length:PURPOSES_CONSENT_V2_BIT_LENGTH];
         model.parsedPurposesLegitmateInterest = [[self class] decodeBitChainStringFromBinary:binaryCharBuffer fromIndex:PURPOSES_LEGIT_INTEREST_BIT_OFFSET length:PURPOSES_LEGIT_INTEREST_BIT_LENGTH];
         model.purposeOneTreatment = [SPTIabTCFUtils BinaryToBoolean:binaryCharBuffer atIndex:PURPOSE_ONE_TREATMENT_BIT];
@@ -125,9 +125,6 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
         SPTDecodedPublisherRestrictionAndOffset *pubRestAndOffset;
         pubRestAndOffset = [[self class] decodePublisherRestrictionBitChainStringFromBinary:binaryCharBuffer fromIndex:variableOffset];
         model.publisherRestrictions = pubRestAndOffset.value;
-        
-        
-        variableOffset += consentAndOffset.offset;
         
     }
 
@@ -163,9 +160,9 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
     
 }
 
-+ (void)completeModel:(SPTIabTCFModel *)model withPublisherPurposesTransparencyConsent:(NSString *)vendors {
++ (void)completeModel:(SPTIabTCFModel *)model withPublisherPurposesTransparencyConsent:(NSString *)segmentString {
     
-    unsigned char *binaryCharBuffer = [[self class] binaryFromString:vendors];
+    unsigned char *binaryCharBuffer = [[self class] binaryFromString:segmentString];
     
     if (!binaryCharBuffer) {
         return;
@@ -184,7 +181,7 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
     
     model.publisherTCParsedCustomPurposesConsents = [[self class] decodeBitChainStringFromBinary:binaryCharBuffer fromIndex:variableOffset length:(int)numCustomPurposes];
     variableOffset += numCustomPurposes;
-    model.publisherTCParsedCustomPurposesConsents = [[self class] decodeBitChainStringFromBinary:binaryCharBuffer fromIndex:variableOffset length:(int)numCustomPurposes];
+    model.publisherTCParsedCustomPurposesLegitmateInterest = [[self class] decodeBitChainStringFromBinary:binaryCharBuffer fromIndex:variableOffset length:(int)numCustomPurposes];
         
     free(binaryCharBuffer);
     

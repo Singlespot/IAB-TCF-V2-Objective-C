@@ -99,6 +99,11 @@
     return model.cmpId;
 }
 
+- (NSInteger)tcfVersionForTCString:(NSString*)string {
+    SPTIabTCFModel *model = [SPTIabTCStringParser parseConsentString:string];
+    return model.version;
+}
+
 //******************************************************************
 #pragma mark - V1 & V2
 //******************************************************************

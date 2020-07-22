@@ -31,6 +31,8 @@
  */
 @property (nonatomic, retain) NSString *consentString;
 
+- (NSInteger)tcfVersionForTCString:(NSString*)string;
+
 //******************************************************************
 #pragma mark - V1 Specific
 //******************************************************************
