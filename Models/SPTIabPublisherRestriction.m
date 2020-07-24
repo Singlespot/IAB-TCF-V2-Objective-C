@@ -22,4 +22,20 @@
     
 }
 
+- (NSString *)parsedVendors {
+    NSMutableString *retString = [NSMutableString new];
+    
+    NSInteger maxId = [[self.vendorsIds valueForKeyPath:@"@max.self"] integerValue];
+    NSString *typeString = [NSString stringWithFormat:@"%ld", (long)self.retrictionType];
+    NSString *restrictionUndefinedString = [NSString stringWithFormat:@"%ld", (long)Restriction_Undefined];
+    for (int i = 1 ; i <= (int)maxId ; i++) {
+        if ([self.vendorsIds containsObject:[NSNumber numberWithInteger:i]]) {
+            [retString appendString: typeString];
+        } else {
+            [retString appendString:restrictionUndefinedString];
+        }
+    }
+    return retString;
+}
+
 @end

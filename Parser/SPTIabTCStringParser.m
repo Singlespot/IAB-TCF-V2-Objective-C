@@ -45,6 +45,18 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
 
 @end
 
+@interface SPTVendorIdsAndOffset : NSObject
+
+@property (assign, nonatomic) int offset;
+@property (retain, nonatomic) NSArray<NSNumber *> *value;
+ 
+@end
+
+@implementation SPTVendorIdsAndOffset
+
+@end
+
+
 @implementation SPTIabTCStringParser
 
 + (SPTIabTCFModel *)parseConsentString:(NSString *)consentString{
@@ -264,14 +276,13 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
         PublisherRestrictionType restrictType = [SPTIabTCFUtils BinaryToDecimal:binaryCharBuffer fromIndex:totalOffset length:PUBLISHER_RESTRICTION_TYPE_BIT_LENGTH];
         totalOffset += PUBLISHER_RESTRICTION_TYPE_BIT_LENGTH;
         
-    
-        SPTDecodedStringAndOffset *vendorVLDS = [[self class] decodeBitChainStringFromBinary:binaryCharBuffer fromIndex:totalOffset entryNumber:INT_MAX version1:NO];
+        SPTVendorIdsAndOffset *vendorVLDS = [[self class] decodeBitChainStringForPubRest:binaryCharBuffer fromIndex:totalOffset];
         totalOffset += vendorVLDS.offset;
         
         SPTIabPublisherRestriction *pubRestriction = [SPTIabPublisherRestriction new];
         pubRestriction.purposeId = purposeId;
         pubRestriction.retrictionType = restrictType;
-        pubRestriction.parsedVendors = vendorVLDS.value;
+        pubRestriction.vendorsIds = vendorVLDS.value;
         
         [pubRestrictions addObject:pubRestriction];
     }
@@ -283,6 +294,43 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
     
     return retVal;
     
+}
+
++ (SPTVendorIdsAndOffset *)decodeBitChainStringForPubRest:(unsigned char*)binaryCharBuffer fromIndex:(int)startIndex {
+
+    int totalOffset = startIndex;
+        
+    NSInteger numEntries = [SPTIabTCFUtils BinaryToDecimal:binaryCharBuffer fromIndex:totalOffset length:NUM_ENTRIES_BIT_LENGTH];
+    totalOffset += NUM_ENTRIES_BIT_LENGTH;
+    
+    NSMutableArray *vendorConsentIds = [NSMutableArray new];
+    
+    for (int i = 0 ; i < (int)numEntries ; i++) {
+        BOOL isRangeAndNotSingleEntry = binaryCharBuffer[totalOffset] != '0';
+        totalOffset ++;
+        if (!isRangeAndNotSingleEntry) {
+            NSInteger singleVendorId = [SPTIabTCFUtils BinaryToDecimal:binaryCharBuffer fromIndex:totalOffset  length:START_OR_ONLY_VENDOR_ID_BIT_LENGTH];
+            totalOffset += START_OR_ONLY_VENDOR_ID_BIT_LENGTH;
+            [vendorConsentIds addObject:[NSNumber numberWithInteger:singleVendorId]];
+            
+        } else {
+            NSInteger startVendorId = [SPTIabTCFUtils BinaryToDecimal:binaryCharBuffer fromIndex:totalOffset length:START_OR_ONLY_VENDOR_ID_BIT_LENGTH];
+            totalOffset += START_OR_ONLY_VENDOR_ID_BIT_LENGTH;
+            
+            NSInteger endVendorId = [SPTIabTCFUtils BinaryToDecimal:binaryCharBuffer fromIndex:totalOffset length:END_VENDOR_ID_BIT_LENGTH];
+            totalOffset += END_VENDOR_ID_BIT_LENGTH;
+            for (int i = (int)startVendorId ; i <= (int)endVendorId ; i++) {
+                [vendorConsentIds addObject:[NSNumber numberWithInteger:i]];
+            }
+        }
+    }
+               
+    int localOffset = totalOffset - startIndex;
+    SPTVendorIdsAndOffset *retvalue = [SPTVendorIdsAndOffset new];
+    retvalue.value = vendorConsentIds;
+    retvalue.offset = localOffset;
+    
+    return retvalue;
 }
 
 + (SPTDecodedStringAndOffset *)decodeBitChainStringFromBinary:(unsigned char*)binaryCharBuffer fromIndex:(int)startIndex entryNumber:(NSInteger)entryNumber version1:(BOOL)v1 {

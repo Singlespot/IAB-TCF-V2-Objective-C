@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, PublisherRestrictionType) {
 
 @property (assign, nonatomic) NSInteger purposeId;
 @property (assign, nonatomic) PublisherRestrictionType retrictionType;
+@property (retain, nonatomic) NSArray * vendorsIds;
 @property (retain, nonatomic) NSString * parsedVendors;
 
 - (NSDictionary *)asJson;
