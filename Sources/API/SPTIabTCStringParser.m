@@ -282,7 +282,7 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
         
         SPTIabPublisherRestriction *pubRestriction = [SPTIabPublisherRestriction new];
         pubRestriction.purposeId = purposeId;
-        pubRestriction.retrictionType = restrictType;
+        pubRestriction.restrictionType = restrictType;
         pubRestriction.vendorsIds = vendorVLDS.value;
         
         [pubRestrictions addObject:pubRestriction];

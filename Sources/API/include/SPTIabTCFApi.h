@@ -10,7 +10,6 @@
 
 #import "SPTIabTCFv1StorageProtocol.h"
 #import "SPTIabTCFv2StorageProtocol.h"
-// #import "SPTSinglespotStorageProtocol.h"
 #import "SPTIabTCStringParser.h"
 
 /**
