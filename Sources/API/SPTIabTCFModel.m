@@ -10,8 +10,6 @@
 
 @implementation SPTIabTCFModel
 
-
-
 - (BOOL)isVendorConsentGivenFor:(int)vendorId {
     return [self booleanInBitString:self.parsedVendorsConsents forId:vendorId];
 }

@@ -1,0 +1,10 @@
+os: osx
+osx_image: xcode12
+language: swift
+sudo: required
+script:
+- swift --version
+- swift package update
+- swift test --sanitize address
+- swift test --sanitize undefined
+- swift test --sanitize thread
