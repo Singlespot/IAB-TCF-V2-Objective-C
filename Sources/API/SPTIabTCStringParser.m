@@ -6,6 +6,7 @@
 //  Copyright © 2020 Alexandre Fortoul. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "SPTIabTCStringParser.h"
 #import "SPTIabTCFUtils.h"
 #import "SPTIabTCFConstants.h"
@@ -213,7 +214,7 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
     int a = 65; //first char
     int charBitLenght = 6;
     if (length%charBitLenght != 0) {
-        NSDebugLog(@"SPTIabConsentStringParser: Invalid 6 bit char encoded string (not a 6 multiple)");
+        NSLog(@"SPTIabConsentStringParser: Invalid 6 bit char encoded string (not a 6 multiple)");
         return @"";
     }
     int characterNumber = length/charBitLenght;

@@ -57,10 +57,10 @@
 -(void)setConsentString:(NSString *)consentString {
     SPTIabTCFModel *model = [SPTIabTCStringParser parseConsentString:consentString];
     self.tcModel = model;
-    
+
     NSString *parsedVendorConsents = model.parsedVendorsConsents;
     NSString *parsedPurposeConsents = model.parsedPurposesConsents;
-    
+
     if (model.version == 1) {
         self.v1DataStorage.consentString = consentString;
         self.v1DataStorage.parsedVendorConsents = parsedVendorConsents;
@@ -68,17 +68,17 @@
     }
     else if (model.version == 2) {
         self.v2DataStorage.tcString = consentString;
-        
+
         self.v2DataStorage.cmpSdkId = model.cmpId;
         self.v2DataStorage.cmpSdkVersion = model.cmpVersion;
-    
+
         self.v2DataStorage.policyVersion = model.policyVersion;
-        
+
         self.v2DataStorage.publisherCountryCode = model.publisherCountryCode;
         self.v2DataStorage.purposeOneTreatment = model.purposeOneTreatment;
         self.v2DataStorage.useNonStandardStack = model.useNonStandardStack;
         self.v2DataStorage.isServiceSpecific = model.isServiceSpecific;
-        
+
         self.v2DataStorage.parsedVendorsConsents = model.parsedVendorsConsents;
         self.v2DataStorage.parsedVendorsLegitmateInterest = model.parsedVendorsLegitmateInterest;
         self.v2DataStorage.parsedPurposesConsents = model.parsedPurposesConsents;
@@ -311,4 +311,3 @@
 
 
 @end
-

@@ -73,12 +73,12 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
 
 - (void) registerDefaultUserDefault {
     NSDictionary *dataStorageDefaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
-                                              
+
                                               [NSNumber numberWithInteger:-1], SPT_IABTCF_gdprApplies,
                                               @"AA", SPT_IABTCF_PublisherCC,
                                               [NSNumber numberWithInteger:0], SPT_IABTCF_PurposeOneTreatment,
                                               @"", SPT_IABTCF_TCString,
-                                              
+
                                               @"", SPT_IABTCF_VendorConsents,
                                               @"", SPT_IABTCF_VendorLegitimateInterests,
                                               @"", SPT_IABTCF_PurposeConsents,
@@ -88,7 +88,7 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
                                               @"", SPT_IABTCF_PublisherLegitimateInterests,
                                               @"", SPT_IABTCF_PublisherCustomPurposesConsents,
                                               @"", SPT_IABTCF_PublisherCustomPurposesLegitimateInterests,
-                                              
+
                                               nil];
     [_userDefaults registerDefaults:dataStorageDefaultValues];
 }
@@ -98,14 +98,14 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
     return [self.userDefaults objectForKey:SPT_IABTCF_TCString];
 }
 
-- (void)setTcString:(NSString *)tcString{
-    [self.userDefaults setObject:tcString forKey:SPT_IABTCF_TCString];
+- (void)setTcString:(NSString *)newTcString{
+    [self.userDefaults setObject:newTcString forKey:SPT_IABTCF_TCString];
     [self.userDefaults synchronize];
 }
 
 - (GdprApplies)gdprApplies {
     NSString *gdprAppliesAsString = [self.userDefaults objectForKey:SPT_IABTCF_gdprApplies];
-    
+
     if (gdprAppliesAsString != nil) {
         if ([gdprAppliesAsString isEqualToString:@"0"]) {
             return GdprApplies_No;
@@ -119,13 +119,13 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
     }
 }
 
-- (void)setGdprApplies:(GdprApplies)gdprApplies {
+- (void)setGdprApplies:(GdprApplies)newGdprApplies {
     NSString *gdprAppliesAsString = nil;
 
-    if (gdprApplies == GdprApplies_No || gdprApplies == GdprApplies_Yes) {
-        gdprAppliesAsString = [NSString stringWithFormat:@"%li", (long)gdprApplies];
+    if (newGdprApplies == GdprApplies_No || newGdprApplies == GdprApplies_Yes) {
+        gdprAppliesAsString = [NSString stringWithFormat:@"%li", (long)newGdprApplies];
     }
-    
+
     [self.userDefaults setObject:gdprAppliesAsString forKey:SPT_IABTCF_gdprApplies];
     [self.userDefaults synchronize];
 }
@@ -136,8 +136,8 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
     return [self.userDefaults objectForKey:SPT_IABTCF_VendorConsents];
 }
 
-- (void)setParsedVendorConsents:(NSString *)parsedVendorConsents {
-    [self.userDefaults setObject:parsedVendorConsents forKey:SPT_IABTCF_VendorConsents];
+- (void)setParsedVendorConsents:(NSString *)newParsedVendorConsents {
+    [self.userDefaults setObject:newParsedVendorConsents forKey:SPT_IABTCF_VendorConsents];
     [self.userDefaults synchronize];
 }
 
@@ -145,8 +145,8 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
     return [self.userDefaults objectForKey:SPT_IABTCF_VendorLegitimateInterests];
 }
 
-- (void)setParsedVendorsLegitmateInterest:(NSString *)parsedVendorsLegitmateInterest {
-    [self.userDefaults setObject:parsedVendorsLegitmateInterest forKey:SPT_IABTCF_VendorLegitimateInterests];
+- (void)setParsedVendorsLegitmateInterest:(NSString *)newParsedVendorsLegitmateInterest {
+    [self.userDefaults setObject:newParsedVendorsLegitmateInterest forKey:SPT_IABTCF_VendorLegitimateInterests];
     [self.userDefaults synchronize];
 }
 
@@ -154,8 +154,8 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
     return [self.userDefaults objectForKey:SPT_IABTCF_PurposeConsents];
 }
 
--(void)setParsedPurposeConsents:(NSString *)parsedPurposeConsents {
-    [self.userDefaults setObject:parsedPurposeConsents forKey:SPT_IABTCF_PurposeConsents];
+-(void)setParsedPurposeConsents:(NSString *)newParsedPurposeConsents {
+    [self.userDefaults setObject:newParsedPurposeConsents forKey:SPT_IABTCF_PurposeConsents];
     [self.userDefaults synchronize];
 }
 
@@ -163,8 +163,8 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
     return [self.userDefaults objectForKey:SPT_IABTCF_PurposeLegitimateInterests];
 }
 
-- (void)setParsedPurposesLegitmateInterest:(NSString *)parsedPurposesLegitmateInterest {
-    [self.userDefaults setObject:parsedPurposesLegitmateInterest forKey:SPT_IABTCF_PurposeLegitimateInterests];
+- (void)setParsedPurposesLegitmateInterest:(NSString *)newParsedPurposesLegitmateInterest {
+    [self.userDefaults setObject:newParsedPurposesLegitmateInterest forKey:SPT_IABTCF_PurposeLegitimateInterests];
     [self.userDefaults synchronize];
 }
 
@@ -172,8 +172,8 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
     return [self.userDefaults objectForKey:SPT_IABTCF_SpecialFeaturesOptIns];
 }
 
-- (void)setSpecialFeatureOptIns:(NSString *)specialFeatureOptIns {
-    [self.userDefaults setObject:specialFeatureOptIns forKey:SPT_IABTCF_SpecialFeaturesOptIns];
+- (void)setSpecialFeatureOptIns:(NSString *)newSpecialFeatureOptIns {
+    [self.userDefaults setObject:newSpecialFeatureOptIns forKey:SPT_IABTCF_SpecialFeaturesOptIns];
     [self.userDefaults synchronize];
 }
 
@@ -181,8 +181,8 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
     return [self.userDefaults objectForKey:SPT_IABTCF_PublisherConsent];
 }
 
-- (void)setPublisherTCParsedPurposesConsents:(NSString *)publisherTCParsedPurposesConsents {
-    [self.userDefaults setObject:publisherTCParsedPurposesConsents forKey:SPT_IABTCF_PublisherConsent];
+- (void)setPublisherTCParsedPurposesConsents:(NSString *)newPublisherTCParsedPurposesConsents {
+    [self.userDefaults setObject:newPublisherTCParsedPurposesConsents forKey:SPT_IABTCF_PublisherConsent];
     [self.userDefaults synchronize];
 }
 
@@ -190,8 +190,8 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
     return [self.userDefaults objectForKey:SPT_IABTCF_PublisherLegitimateInterests];
 }
 
-- (void)setPublisherTCParsedPurposesLegitmateInterest:(NSString *)publisherTCParsedPurposesLegitmateInterest {
-    [self.userDefaults setObject:publisherTCParsedPurposesLegitmateInterest forKey:SPT_IABTCF_PublisherLegitimateInterests];
+- (void)setPublisherTCParsedPurposesLegitmateInterest:(NSString *)newPublisherTCParsedPurposesLegitmateInterest {
+    [self.userDefaults setObject:newPublisherTCParsedPurposesLegitmateInterest forKey:SPT_IABTCF_PublisherLegitimateInterests];
     [self.userDefaults synchronize];
 }
 
@@ -199,8 +199,8 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
     return [self.userDefaults objectForKey:SPT_IABTCF_PublisherCustomPurposesConsents];
 }
 
-- (void)setPublisherTCParsedCustomPurposesConsents:(NSString *)publisherTCParsedCustomPurposesConsents {
-    [self.userDefaults setObject:publisherTCParsedCustomPurposesConsents forKey:SPT_IABTCF_PublisherCustomPurposesConsents];
+- (void)setPublisherTCParsedCustomPurposesConsents:(NSString *)newPublisherTCParsedCustomPurposesConsents {
+    [self.userDefaults setObject:newPublisherTCParsedCustomPurposesConsents forKey:SPT_IABTCF_PublisherCustomPurposesConsents];
     [self.userDefaults synchronize];
 }
 
@@ -208,8 +208,8 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
     return [self.userDefaults objectForKey:SPT_IABTCF_PublisherCustomPurposesLegitimateInterests];
 }
 
-- (void)setPublisherTCParsedCustomPurposesLegitmateInterest:(NSString *)publisherTCParsedCustomPurposesLegitmateInterest {
-    [self.userDefaults setObject:publisherTCParsedCustomPurposesLegitmateInterest forKey:SPT_IABTCF_PublisherCustomPurposesLegitimateInterests];
+- (void)setPublisherTCParsedCustomPurposesLegitmateInterest:(NSString *)newPublisherTCParsedCustomPurposesLegitmateInterest {
+    [self.userDefaults setObject:newPublisherTCParsedCustomPurposesLegitmateInterest forKey:SPT_IABTCF_PublisherCustomPurposesLegitimateInterests];
     [self.userDefaults synchronize];
 }
 
