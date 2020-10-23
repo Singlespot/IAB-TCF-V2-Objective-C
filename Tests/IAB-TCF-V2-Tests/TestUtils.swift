@@ -17,14 +17,13 @@ class TestUtils {
         return model!
     }
 
-    private static func from2sComplement(_ str: String) -> Int {
+    private static func from2sComplement(_ str: String) -> Int8 {
         let positive = str.substring(fromIndex: 0).substring(toIndex: 1)
         if positive == "0" {
             let val = str.substring(fromIndex: 1)
-            return Int(val, radix: 2)!
+            return Int8(val, radix: 2)!
         } else if positive == "1" {
-            let x = Int8(bitPattern: UInt8(str, radix: 2)!)
-            return Int(x)
+            return Int8(bitPattern: UInt8(str, radix: 2)!)
         } else {
             return 0
         }
@@ -33,12 +32,12 @@ class TestUtils {
     public static func base64FromBitString(_ str: String) -> String {
         var bits = Array<UInt8>()
         for j in 0..<str.count {
+            // Turn every 8 bytes into an integer
             if (j % 8 == 0) {
                 let substr = str.substring(fromIndex: j).substring(toIndex: 8)
                 let num = TestUtils.from2sComplement(substr)
 
-                bits.append(UInt8(bitPattern: Int8(num)))
-                print(substr, num)
+                bits.append(UInt8(bitPattern: num))
             }
         }
         return Data(bytes: bits).base64EncodedString()

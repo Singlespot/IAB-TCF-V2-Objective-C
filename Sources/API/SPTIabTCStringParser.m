@@ -339,8 +339,9 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
     int totalOffset = startIndex;
     
     NSMutableString *retString = [NSMutableString new];
-        
-    BOOL isRangeEncoding = binaryCharBuffer[totalOffset] != '0';
+
+    size_t len = strlen(binaryCharBuffer);
+    BOOL isRangeEncoding = totalOffset < len ? binaryCharBuffer[totalOffset] != '0' : false;
     totalOffset ++;
     
     if (!isRangeEncoding) {

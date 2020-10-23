@@ -5,6 +5,6 @@ sudo: required
 script:
 - swift --version
 - swift package update
-- swift test --sanitize address
+# - swift test --sanitize address
 - swift test --sanitize undefined
 - swift test --sanitize thread
