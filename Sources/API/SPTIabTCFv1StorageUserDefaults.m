@@ -22,7 +22,7 @@ NSString *const SPT_IABConsent_CMPPresentKey = @"IABConsent_CMPPresent";
 /*
  * Test method for uncoupling userDefaults
  */
-- (instancetype)initWithUserDefault:(NSUserDefaults *)userDefs
+- (instancetype)initWithUserDefaults:(NSUserDefaults *)userDefs
 {
     self = [super init];
     if (self) {

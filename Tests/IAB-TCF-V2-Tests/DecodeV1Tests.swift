@@ -34,69 +34,69 @@ class DecodeV1Tests: XCTestCase {
 
     func testAllowedPurposes() {
         let model = self.parse("BOOzQoAOOzQoAAPAFSENCW-AIBA=")
-        XCTAssertTrue([1, 2, 3, 4, 5, 15, 24].allSatisfy(model.isPurposeConsentGiven(for:)))
+        XCTAssertTrue([1, 2, 3, 4, 5, 15, 24].allSatisfy(model.isPurposeConsentGivenFor(purposeId:)))
     }
 
     func testBitFieldEncoding() {
         let model = self.parse("BOOzQoAOOzQoAAPAFSENCW-AIBACBAAABCA=")
-        XCTAssertTrue([1, 25, 30].allSatisfy(model.isVendorConsentGiven(for:)))
+        XCTAssertTrue([1, 25, 30].allSatisfy(model.isVendorConsentGivenFor(vendorId:)))
 
-        XCTAssertFalse(model.isVendorConsentGiven(for: 2))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 3))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 31))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 32))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 2))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 3))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 31))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 32))
 
-        XCTAssertFalse(model.isVendorConsentGiven(for: -99))
-        XCTAssertFalse(model.isVendorConsentGiven(for: -1))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 0))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 33))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 34))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 99))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: -99))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: -1))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 0))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 33))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 34))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 99))
     }
 
     func testRangeEncodingDefaultFalse() {
         let model = self.parse("BOOzQoAOOzQoAAPAFSENCW-AIBACCACgACADIAHg")
-        XCTAssertTrue([1, 10, 25, 30].allSatisfy(model.isVendorConsentGiven(for:)))
+        XCTAssertTrue([1, 10, 25, 30].allSatisfy(model.isVendorConsentGivenFor(vendorId:)))
 
-        XCTAssertFalse(model.isVendorConsentGiven(for: 26))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 28))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 31))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 32))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 26))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 28))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 31))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 32))
 
         // Vendors outside range [1, MaxVendorId] are not allowed
-        XCTAssertFalse(model.isVendorConsentGiven(for: -99))
-        XCTAssertFalse(model.isVendorConsentGiven(for: -1))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 0))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 33))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 34))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 99))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: -99))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: -1))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 0))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 33))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 34))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 99))
     }
 
     func testRangeEncodingDefaultTrue() {
         let model = self.parse("BOOzQoAOOzQoAAPAFSENCW-AIBACDACAADABkAHg")
 
         // Then: correct vendor IDs are allowed
-        XCTAssertFalse(model.isVendorConsentGiven(for: 1))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 25))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 27))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 30))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 1))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 25))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 27))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 30))
 
-        XCTAssertTrue(model.isVendorConsentGiven(for: 2))
-        XCTAssertTrue(model.isVendorConsentGiven(for: 15))
-        XCTAssertTrue(model.isVendorConsentGiven(for: 31))
-        XCTAssertTrue(model.isVendorConsentGiven(for: 32))
+        XCTAssertTrue(model.isVendorConsentGivenFor(vendorId: 2))
+        XCTAssertTrue(model.isVendorConsentGivenFor(vendorId: 15))
+        XCTAssertTrue(model.isVendorConsentGivenFor(vendorId: 31))
+        XCTAssertTrue(model.isVendorConsentGivenFor(vendorId: 32))
 
         // Vendors outside range [1, MaxVendorId] are not allowed
-        XCTAssertFalse(model.isVendorConsentGiven(for: -99))
-        XCTAssertFalse(model.isVendorConsentGiven(for: -1))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 0))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 33))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 34))
-        XCTAssertFalse(model.isVendorConsentGiven(for: 99))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: -99))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: -1))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 0))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 33))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 34))
+        XCTAssertFalse(model.isVendorConsentGivenFor(vendorId: 99))
     }
 
     func testVendorIdRange() {
         let model = self.parse("BOwOh-wOwOh-wABABBAAABAAAAACqADgAUACgAHgAPg")
-        XCTAssertTrue(model.isVendorConsentGiven(for: 15))
+        XCTAssertTrue(model.isVendorConsentGivenFor(vendorId: 15))
     }
 }

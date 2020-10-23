@@ -45,19 +45,30 @@ NS_ASSUME_NONNULL_BEGIN
 @property (retain, nonatomic) NSString * publisherTCParsedCustomPurposesLegitmateInterest;
 
 
-- (BOOL)isVendorConsentGivenFor:(int)vendorId;
-- (BOOL)isVendorLegitInterestGivenFor:(int)vendorId;
-- (BOOL)isPurposeConsentGivenFor:(int)purposeId;
-- (BOOL)isPurposeLegitInterestGivenFor:(int)purposeId;
-- (BOOL)isSpecialFeatureOptedInFor:(int)specialFeatureId;
-- (BOOL)isVendorDiscloseFor:(int)vendorId;
-- (BOOL)isVendorAllowedFor:(int)vendorId;
-- (BOOL)isPublisherPurposeConsentGivenFor:(int)purposeId;
-- (BOOL)isPublisherPurposeLegitInterestGivenFor:(int)purposeId;
-- (BOOL)isPublisherCustomPurposeConsentGivenFor:(int)purposeId;
-- (BOOL)isPublisherCustomPurposeLegitInterestGivenFor:(int)purposeId;
+- (BOOL)isVendorConsentGivenFor:(int)vendorId
+    NS_SWIFT_NAME(isVendorConsentGivenFor(vendorId:));
+- (BOOL)isVendorLegitInterestGivenFor:(int)vendorId
+    NS_SWIFT_NAME(isVendorLegitInterestGivenFor(vendorId:));
+- (BOOL)isPurposeConsentGivenFor:(int)purposeId
+    NS_SWIFT_NAME(isPurposeConsentGivenFor(purposeId:));
+- (BOOL)isPurposeLegitInterestGivenFor:(int)purposeId
+    NS_SWIFT_NAME(isPurposeLegitInterestGivenFor(purposeId:));
+- (BOOL)isSpecialFeatureOptedInFor:(int)specialFeatureId
+    NS_SWIFT_NAME(isSpecialFeatureOptedInFor(specialFeatureId:));
+- (BOOL)isVendorDiscloseFor:(int)vendorId
+    NS_SWIFT_NAME(isVendorDiscloseFor(vendorId:));
+- (BOOL)isVendorAllowedFor:(int)vendorId
+    NS_SWIFT_NAME(isVendorAllowedFor(vendorId:));
+- (BOOL)isPublisherPurposeConsentGivenFor:(int)purposeId
+    NS_SWIFT_NAME(isPublisherPurposeConsentGivenFor(purposeId:));
+- (BOOL)isPublisherPurposeLegitInterestGivenFor:(int)purposeId
+    NS_SWIFT_NAME(isPublisherPurposeLegitInterstGivenFor(purposeId:));
+- (BOOL)isPublisherCustomPurposeConsentGivenFor:(int)purposeId
+    NS_SWIFT_NAME(isPublisherCustomPurposeConsentGivenFor(purposeId:));
+- (BOOL)isPublisherCustomPurposeLegitInterestGivenFor:(int)purposeId
+    NS_SWIFT_NAME(isPublisherCustomPurposeLegitInterestGivenFor(purposeId:));
 
-- (PublisherRestrictionType)publisherRestrictionTypeForVendor:(int)vendorId forPurpose:(int)purposeId;
+- (PublisherRestrictionType)publisherRestrictionTypeForVendor:(int)vendorId forPurpose:(int)purposeId NS_REFINED_FOR_SWIFT;
 
 - (NSDictionary *)asJson;
 

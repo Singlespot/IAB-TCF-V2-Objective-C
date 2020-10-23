@@ -51,7 +51,7 @@ NSString *const SPT_IABTCF_PublisherCustomPurposesLegitimateInterests = @"IABTCF
 /*
  * Test method for uncoupling userDefaults
  */
-- (instancetype)initWithUserDefault:(NSUserDefaults *)userDefs
+- (instancetype)initWithUserDefaults:(NSUserDefaults *)userDefs
 {
     self = [super init];
     if (self) {

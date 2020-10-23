@@ -12,12 +12,12 @@ class StringDecoderTests: XCTestCase {
 
     func testCanCreateModelFromParsedString() {
         let string = "COtybn4PA_zT4KjACBENAPCIAEBAAECAAIAAAAAAAAAA.IFoEUQQgAIQwgIwQABAEAAAAOIAACAIAAAAQAIAgEAACEAAAAAgAQBAAAAAAAGBAAgAAAAAAAFAAECAAAgAAQARAEQAAAAAJAAIAAgAAAYQEAAAQmAgBC3ZAYzUw"
-        XCTAssertNotNil(SPTIabTCFApi().decodeTCString(string))
+        XCTAssertNotNil(SPTIabTCFApi.decode(TCString: string))
     }
 
     func testCanCreateModelOnePartString() {
         let string = "COtybn4PA_zT4KjACBENAPCIAEBAAECAAIAAAAAAAAAA"
-        XCTAssertNotNil(SPTIabTCFApi().decodeTCString(string))
+        XCTAssertNotNil(SPTIabTCFApi.decode(TCString: string))
     }
 
 //    func testShouldFailIfANonSupportedVersionIsPassed() {

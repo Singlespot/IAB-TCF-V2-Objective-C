@@ -11,7 +11,7 @@ import IAB_TCF_V2_API
 
 class TestUtils {
     public static func parse(_ consentString: String, version: Int) -> SPTIabTCFModel {
-        let model = SPTIabTCFApi().decodeTCString(consentString)
+        let model = SPTIabTCFApi.decode(TCString: consentString)
         XCTAssertTrue(model?.version == version)
         XCTAssertNotNil(model)
         return model!

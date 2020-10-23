@@ -35,15 +35,15 @@ class DecodeTests: XCTestCase {
     func testConstructConsentsFromBitFields() {
         let model = self.parse("COrEAV4OrXx94ACABBENAHCIAD-AAAAAAACAAxAAAAgAIAwgAgAAAAEAgQAAAAAEAYQAQAAAACAAAABAAA")
 
-        XCTAssertTrue([3, 4, 5, 6, 7, 8, 9].allSatisfy(model.isPurposeConsentGiven(for:)))
-        XCTAssertTrue([23, 37, 47, 48, 53, 65, 98].allSatisfy(model.isVendorConsentGiven(for:)))
-        XCTAssertTrue([37, 47, 48, 53, 65, 98, 129].allSatisfy(model.isVendorLegitInterestGiven(for:)))
+        XCTAssertTrue([3, 4, 5, 6, 7, 8, 9].allSatisfy(model.isPurposeConsentGivenFor(purposeId:)))
+        XCTAssertTrue([23, 37, 47, 48, 53, 65, 98].allSatisfy(model.isVendorConsentGivenFor(vendorId:)))
+        XCTAssertTrue([37, 47, 48, 53, 65, 98, 129].allSatisfy(model.isVendorLegitInterestGivenFor(vendorId:)))
     }
 
     func testCanParseDisclosedAndAllowedVendors() {
         let model = self.parse("COrEAV4OrXx94ACABBENAHCIAD-AAAAAAACAAxAAAAgAIAwgAgAAAAEAgQAAAAAEAYQAQAAAACAAAABAAA.IBAgAAAgAIAwgAgAAAAEAAAACA.QAagAQAgAIAwgA")
-        XCTAssertTrue([12, 23, 37, 47, 48, 53].allSatisfy(model.isVendorAllowed(for:)))
-        XCTAssertTrue([23, 37, 47, 48, 53, 65, 98, 129].allSatisfy(model.isVendorDisclose(for:)))
+        XCTAssertTrue([12, 23, 37, 47, 48, 53].allSatisfy(model.isVendorAllowedFor(vendorId:)))
+        XCTAssertTrue([23, 37, 47, 48, 53, 65, 98, 129].allSatisfy(model.isVendorDiscloseFor(vendorId:)))
     }
 
     func testCanParseAllParts() {
@@ -53,7 +53,7 @@ class DecodeTests: XCTestCase {
 
     func testCanParseRangeEncodedVendorLegitimateInterests() {
         let model = self.parse("COv__-wOv__-wC2AAAENAPCgAAAAAAAAAAAAA_wAQA_gEBABAEAAAA")
-        XCTAssertTrue(model.isVendorLegitInterestGiven(for: 128))
+        XCTAssertTrue(model.isVendorLegitInterestGivenFor(vendorId: 128))
     }
 
     func testPublisherRestrinctions() {
@@ -122,10 +122,10 @@ class DecodeTests: XCTestCase {
         let base64CoreString = "COtybn4PA_zT4KjACBENAPCIAEBAAECAAIAAAAAAAAAA" + "." + TestUtils.base64FromBitString(publisherPurposes)
         let model = self.parse(base64CoreString)
 
-        XCTAssertTrue(model.isPublisherPurposeConsentGiven(for: 1))
-        XCTAssertTrue(model.isPublisherPurposeLegitInterestGiven(for: 24))
-        XCTAssertTrue(model.isPublisherCustomPurposeConsentGiven(for: 2))
-        XCTAssertTrue([1, 2].allSatisfy(model.isPublisherCustomPurposeLegitInterestGiven(for:)))
+        XCTAssertTrue(model.isPublisherPurposeConsentGivenFor(purposeId: 1))
+        XCTAssertTrue(model.isPublisherPurposeLegitInterstGivenFor(purposeId: 24))
+        XCTAssertTrue(model.isPublisherCustomPurposeConsentGivenFor(purposeId:  2))
+        XCTAssertTrue([1, 2].allSatisfy(model.isPublisherCustomPurposeLegitInterestGivenFor(purposeId:)))
     }
 
     func testDefaultSegmentType() {
@@ -140,17 +140,17 @@ class DecodeTests: XCTestCase {
         let base64CoreString2Range = "COwBOpCOwBOpCLqAAAENAPCAAAAAAAAAAAAAFfwAYFfAV-BVkAGBVYFWAAA.IFoEUQQgAIQwgIwQABAEAAAAOIAACAIAAAAQAIAgEAACEAAAAAgAQBAAAAAAAGBAAgAAAAAAAFAAECAAAgAAQARAEQAAAAAJAAIAAgAAAYQEAAAQmAgBC3ZAYzUw"
         let base64CoreString1Range = "COwBOpCOwBOpCLqAAAENAPCAAAAAAAAAAAAAFfwAQFfgUbABAUaAAA.IFoEUQQgAIQwgIwQABAEAAAAOIAACAIAAAAQAIAgEAACEAAAAAgAQBAAAAAAAGBAAgAAAAAAAFAAECAAAgAAQARAEQAAAAAJAAIAAgAAAYQEAAAQmAgBC3ZAYzUw"
         let model2 = self.parse(base64CoreString2Range)
-        XCTAssertTrue([702, 703].allSatisfy(model2.isVendorConsentGiven(for:)))
+        XCTAssertTrue([702, 703].allSatisfy(model2.isVendorConsentGivenFor(vendorId:)))
 
         let model1 = self.parse(base64CoreString1Range)
-        XCTAssertTrue([703].allSatisfy(model1.isVendorConsentGiven(for:)))
+        XCTAssertTrue([703].allSatisfy(model1.isVendorConsentGivenFor(vendorId:)))
     }
 
     func testPurposesConsent() {
         let consent = "COwxsONOwxsONKpAAAENAdCAAMAAAAAAAAAAAAAAAAAA"
         let model = self.parse(consent)
 
-        XCTAssertTrue([1, 2].allSatisfy(model.isPurposeConsentGiven(for: )))
+        XCTAssertTrue([1, 2].allSatisfy(model.isPurposeConsentGivenFor(purposeId:)))
     }
 
     func testHashCodeEquals() {

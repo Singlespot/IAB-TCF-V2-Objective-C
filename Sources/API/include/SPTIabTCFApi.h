@@ -22,15 +22,18 @@
  */
 @property (nonatomic, assign) BOOL ignoreV1;
 
-- (instancetype)initWithUserDefault:(NSUserDefaults *)userDefs;
+- (instancetype)initWithUserDefaults:(NSUserDefaults *)userDefs
+    NS_SWIFT_NAME(initWith(userDefaults:));
 
-- (SPTIabTCFModel *)decodeTCString:(NSString *)tcString;
++ (SPTIabTCFModel *)decodeTCString:(NSString *)tcString
+    NS_SWIFT_NAME(decode(TCString:));
 /**
  The consent string passed as a websafe base64-encoded string.
  */
 @property (nonatomic, retain) NSString *consentString;
 
-- (NSInteger)tcfVersionForTCString:(NSString*)string;
+- (NSInteger)tcfVersionForTCString:(NSString*)string
+    NS_SWIFT_NAME(tcfVersionFor(TCString:));
 
 //******************************************************************
 #pragma mark - V1 Specific
@@ -80,7 +83,8 @@ Returns true if user consent has been given to vendor for the specified consent 
 /**
  Returns true if user consent has been given to vendor
  */
-- (BOOL)isVendorConsentGivenFor:(int)vendorId;
+- (BOOL)isVendorConsentGivenFor:(int)vendorId
+    NS_SWIFT_NAME(isVendorConsentGivenFor(vendorId:));
 
 /**
  Returns true if user consent has been given for purpose for the specified consent string
@@ -90,7 +94,8 @@ Returns true if user consent has been given to vendor for the specified consent 
 /**
  Returns true if user consent has been given for purpose
  */
-- (BOOL)isPurposeConsentGivenFor:(int)purposeId;
+- (BOOL)isPurposeConsentGivenFor:(int)purposeId
+    NS_SWIFT_NAME(isPurposeConsentGivenFor(purposeId:));
 
 //******************************************************************
 #pragma mark - V2 Specific
@@ -110,19 +115,28 @@ Returns true if user consent has been given to vendor for the specified consent 
 @property (assign, nonatomic) BOOL useNonStandardStack;
 @property (assign, nonatomic) BOOL isServiceSpecific;
 
-- (BOOL)isVendorLegitimateInterestGivenFor:(int)vendorId;
-- (BOOL)isPurposeLegitimateInterestGivenFor:(int)vendorId;
+- (BOOL)isVendorLegitimateInterestGivenFor:(int)vendorId
+    NS_SWIFT_NAME(isVendorLegitimateInterestGivenFor(vendorId:));
+- (BOOL)isPurposeLegitimateInterestGivenFor:(int)vendorId
+    NS_SWIFT_NAME(isPurposeLegitimateInterestGivenFor(vendorId:));
 
 - (PublisherRestrictionType)publisherRestrictionTypeForVendor:(int)vendorId forPurpose:(int)purposeId;
 
-- (BOOL)isSpecialFeatureOptedInFor:(int)specialFeatureId;
+- (BOOL)isSpecialFeatureOptedInFor:(int)specialFeatureId
+    NS_SWIFT_NAME(isSpecialFeatureOptedInFor(specialFeatureId:));
 
-- (BOOL)isVendorDiscloseFor:(int)vendorId;
-- (BOOL)isVendorAllowedFor:(int)vendorId;
-- (BOOL)isPublisherPurposeConsentGivenFor:(int)vendorId;
-- (BOOL)isPublisherPurposeLegitimateInterestGivenFor:(int)vendorId;
-- (BOOL)isPublisherCustomPurposeConsentGivenFor:(int)vendorId;
-- (BOOL)isPublisherCustomPurposeLegitimateInterestGivenFor:(int)vendorId;
+- (BOOL)isVendorDiscloseFor:(int)vendorId
+    NS_SWIFT_NAME(isVendorDiscloseFor(vendorId:));
+- (BOOL)isVendorAllowedFor:(int)vendorId
+    NS_SWIFT_NAME(isVendorAllowedFor(vendorId:));
+- (BOOL)isPublisherPurposeConsentGivenFor:(int)vendorId
+    NS_SWIFT_NAME(isPublisherPurposeConsentGivenFor(vendorId:));
+- (BOOL)isPublisherPurposeLegitimateInterestGivenFor:(int)vendorId
+    NS_SWIFT_NAME(isPublisherPublisherLegitimateInterestsGivenFor(vendorId:));
+- (BOOL)isPublisherCustomPurposeConsentGivenFor:(int)vendorId
+    NS_SWIFT_NAME(isPublisherCustomPurposeConsentGivenFor(vendorId:));
+- (BOOL)isPublisherCustomPurposeLegitimateInterestGivenFor:(int)vendorId
+    NS_SWIFT_NAME(isPublisherCustomPurposeLegitimateInterestGivenFor(vendorId:));
 
 /**
  The object that provides all the GDPR-related data for further processing.

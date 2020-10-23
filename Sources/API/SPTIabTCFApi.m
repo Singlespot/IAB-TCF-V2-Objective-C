@@ -16,11 +16,11 @@
 
 @implementation SPTIabTCFApi
 
-- (instancetype)initWithUserDefault:(NSUserDefaults *)userDefs {
+- (instancetype)initWithUserDefaults:(NSUserDefaults *)userDefs {
     self = [super init];
     if (self) {
-        _v1DataStorage = [[SPTIabTCFv1StorageUserDefaults alloc] initWithUserDefault:userDefs];
-        _v2DataStorage = [[SPTIabTCFv2StorageUserDefaults alloc] initWithUserDefault:userDefs];
+        _v1DataStorage = [[SPTIabTCFv1StorageUserDefaults alloc] initWithUserDefaults:userDefs];
+        _v2DataStorage = [[SPTIabTCFv2StorageUserDefaults alloc] initWithUserDefaults:userDefs];
     }
     return self;
 }
@@ -39,7 +39,7 @@
     return _v2DataStorage;
 }
 
-- (SPTIabTCFModel *)decodeTCString:(NSString *)tcString {
++ (SPTIabTCFModel *)decodeTCString:(NSString *)tcString {
     return [SPTIabTCStringParser parseConsentString:tcString];
 }
 
