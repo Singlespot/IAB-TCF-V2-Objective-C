@@ -39,18 +39,18 @@ The following API methods give everything needed to interpret the consent from t
 import IAB_TCF_V2_API
 ...
 	let iabAPI = SPTIabTCFApi().decodeTCString(string)
-	iabAPI.isVendorConsentGiven(for: <VendorId>)
-	iabAPI.isVendorLegitimateInterestGiven(for: <VendorId>)
+	iabAPI.isVendorConsentGivenFor(vendorId: <VendorId>)
+	iabAPI.isVendorLegitimateInterestGivenFor(vendorId: <VendorId>)
 
-	iabAPI.isPurposeConsentGiven(for: <PurposeId>)
-	iabAPI.isPurposeLegitimateInterestGiven(for: <PurposeId>)
+	iabAPI.isPurposeConsentGivenFor(purposeId: <PurposeId>)
+	iabAPI.isPurposeLegitimateInterestGivenFor(purposeId: <PurposeId>)
 
-	iabAPI.isPublisherPurposeConsentGiven(for: <PurposeId>)
-	iabAPI.isPublisherPurposeLegitimateInterestGiven(for: <PurposeId>)
-	iabAPI.isPublisherCustomPurposeConsentGiven(for: <PurposeId>)
-	iabAPI.isPublisherCustomPurposeLegitimateInterestGiven(for: <PurposeId>)
+	iabAPI.isPublisherPurposeConsentGivenFor(purposeId: <PurposeId>)
+	iabAPI.isPublisherPurposeLegitimateInterestGivenFor(purposeId: <PurposeId>)
+	iabAPI.isPublisherCustomPurposeConsentGivenFor(purposeId: <PurposeId>)
+	iabAPI.isPublisherCustomPurposeLegitimateInterestGivenFor(purposeId: <PurposeId>)
 
-	iabAPI.isSpecialFeatureOptedIn(for: <FeatureId>)
+	iabAPI.isSpecialFeatureOptedInFor(specialFeatureId: <FeatureId>)
 ```
 
 ***Notes*** :
@@ -82,7 +82,7 @@ Use the following code to obtain a model with all the property of IAB Transparen
 SPTIabTCFModel *model = [[SPTIabTCFApi new] decodeTCString:<aTCString>];
 ```
 ```Swift
-let model = SPTIabTCFApi().decodeTCString(<aTCString>)
+let model = SPTIabTCFApi.decodeTCString(<aTCString>)
 ```
 This model has the same methods as defined in [1. Reading consent from a localy stored TCString](#readingConsent) to interpret consents.
 
