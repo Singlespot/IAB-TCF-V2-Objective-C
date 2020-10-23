@@ -13,8 +13,8 @@ Add the following to your `Package.swift` dependencies:
 
 ```Swift
 .package(url: "https://github.com/Singlespot/IAB-TCF-V2.git", from: "master"),
-And then import wherever needed: import `IAB_TCF_V2`
 ```
+And then import wherever needed: import `IAB_TCF_V2`
 
 ### 2.Use case
 <a id="readingConsent"></a>
