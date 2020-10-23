@@ -84,7 +84,7 @@ Sometime reading consents from a TCString is needed without necessarily storing 
 Use the following code to obtain a model with all the property of IAB Transparency and Consent Framework v1.1 or v2
 
 ```Objective-C
-SPTIabTCFModel *model = [[SPTIabTCFApi new] decodeTCString:<aTCString>];
+SPTIabTCFModel *model = [SPTIabTCFApi decodeTCString:<aTCString>];
 ```
 ```Swift
 let model = SPTIabTCFApi.decodeTCString(<aTCString>)
