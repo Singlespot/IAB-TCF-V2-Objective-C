@@ -1,0 +1,4 @@
+module API {
+    umbrella "/Users/matthew/NE/IAB-TCF-V2-Objective-C/Sources/API/include"
+    export *
+}
