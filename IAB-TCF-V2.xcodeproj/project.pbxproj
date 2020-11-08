@@ -7,24 +7,35 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		3442F64B25587A80001C3BBF /* IAB TCF Fat Binary */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3442F64E25587A80001C3BBF /* Build configuration list for PBXAggregateTarget "IAB TCF Fat Binary" */;
+			buildPhases = (
+				3442F65825587A9B001C3BBF /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "IAB TCF Fat Binary";
+			productName = "IAB-TCF-V2";
+		};
 		"IAB-TCF-V2::IAB-TCF-V2::ProductTarget" /* IAB-TCF-V2 */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_46 /* Build configuration list for PBXAggregateTarget "IAB-TCF-V2" */;
+			buildConfigurationList = OBJ_45 /* Build configuration list for PBXAggregateTarget "IAB-TCF-V2" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_49 /* PBXTargetDependency */,
+				OBJ_48 /* PBXTargetDependency */,
 			);
 			name = "IAB-TCF-V2";
 			productName = "IAB-TCF-V2";
 		};
 		"IAB-TCF-V2::IAB-TCF-V2PackageTests::ProductTarget" /* IAB-TCF-V2PackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_92 /* Build configuration list for PBXAggregateTarget "IAB-TCF-V2PackageTests" */;
+			buildConfigurationList = OBJ_91 /* Build configuration list for PBXAggregateTarget "IAB-TCF-V2PackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_95 /* PBXTargetDependency */,
+				OBJ_94 /* PBXTargetDependency */,
 			);
 			name = "IAB-TCF-V2PackageTests";
 			productName = "IAB-TCF-V2PackageTests";
@@ -32,53 +43,53 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		OBJ_55 /* SPTIabPublisherRestriction.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* SPTIabPublisherRestriction.m */; };
-		OBJ_56 /* SPTIabTCFApi.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* SPTIabTCFApi.m */; };
-		OBJ_57 /* SPTIabTCFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SPTIabTCFModel.m */; };
-		OBJ_58 /* SPTIabTCFv1StorageUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* SPTIabTCFv1StorageUserDefaults.m */; };
-		OBJ_59 /* SPTIabTCFv2StorageUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* SPTIabTCFv2StorageUserDefaults.m */; };
-		OBJ_60 /* SPTIabTCStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* SPTIabTCStringParser.m */; };
-		OBJ_62 /* IAB_TCF_V2_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "IAB-TCF-V2::IAB-TCF-V2-Utils::Product" /* IAB_TCF_V2_Utils.framework */; };
-		OBJ_70 /* DecodeV1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* DecodeV1Tests.swift */; };
-		OBJ_71 /* DecodeV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* DecodeV2Tests.swift */; };
-		OBJ_72 /* StringDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* StringDecoderTests.swift */; };
-		OBJ_73 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* TestUtils.swift */; };
-		OBJ_75 /* IAB_TCF_V2_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "IAB-TCF-V2::IAB-TCF-V2-API::Product" /* IAB_TCF_V2_API.framework */; };
-		OBJ_76 /* IAB_TCF_V2_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "IAB-TCF-V2::IAB-TCF-V2-Utils::Product" /* IAB_TCF_V2_Utils.framework */; };
-		OBJ_83 /* SPTIabTCFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* SPTIabTCFUtils.m */; };
-		OBJ_90 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_54 /* SPTIabPublisherRestriction.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* SPTIabPublisherRestriction.m */; };
+		OBJ_55 /* SPTIabTCFApi.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* SPTIabTCFApi.m */; };
+		OBJ_56 /* SPTIabTCFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SPTIabTCFModel.m */; };
+		OBJ_57 /* SPTIabTCFv1StorageUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* SPTIabTCFv1StorageUserDefaults.m */; };
+		OBJ_58 /* SPTIabTCFv2StorageUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* SPTIabTCFv2StorageUserDefaults.m */; };
+		OBJ_59 /* SPTIabTCStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* SPTIabTCStringParser.m */; };
+		OBJ_61 /* IAB_TCF_V2_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "IAB-TCF-V2::IAB-TCF-V2-Utils::Product" /* IAB_TCF_V2_Utils.framework */; };
+		OBJ_69 /* DecodeV1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* DecodeV1Tests.swift */; };
+		OBJ_70 /* DecodeV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* DecodeV2Tests.swift */; };
+		OBJ_71 /* StringDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* StringDecoderTests.swift */; };
+		OBJ_72 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* TestUtils.swift */; };
+		OBJ_74 /* IAB_TCF_V2_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "IAB-TCF-V2::IAB-TCF-V2-API::Product" /* IAB_TCF_V2_API.framework */; };
+		OBJ_75 /* IAB_TCF_V2_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "IAB-TCF-V2::IAB-TCF-V2-Utils::Product" /* IAB_TCF_V2_Utils.framework */; };
+		OBJ_82 /* SPTIabTCFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* SPTIabTCFUtils.m */; };
+		OBJ_89 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		34C1704425519A4D0015CAAD /* PBXContainerItemProxy */ = {
+		3442F64025587A71001C3BBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "IAB-TCF-V2::IAB-TCF-V2-Utils";
 			remoteInfo = "IAB-TCF-V2-Utils";
 		};
-		34C1704525519A4D0015CAAD /* PBXContainerItemProxy */ = {
+		3442F64125587A72001C3BBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "IAB-TCF-V2::IAB-TCF-V2-API";
 			remoteInfo = "IAB-TCF-V2-API";
 		};
-		34C1704625519A4D0015CAAD /* PBXContainerItemProxy */ = {
+		3442F64425587A72001C3BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "IAB-TCF-V2::IAB-TCF-V2-API";
+			remoteInfo = "IAB-TCF-V2-API";
+		};
+		3442F64525587A72001C3BBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "IAB-TCF-V2::IAB-TCF-V2-Utils";
 			remoteInfo = "IAB-TCF-V2-Utils";
 		};
-		34C1704725519A4E0015CAAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "IAB-TCF-V2::IAB-TCF-V2-API";
-			remoteInfo = "IAB-TCF-V2-API";
-		};
-		34C1704D25519A4E0015CAAD /* PBXContainerItemProxy */ = {
+		3442F64925587A72001C3BBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -106,40 +117,39 @@
 		OBJ_23 /* SPTIabTCFv2StorageUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTIabTCFv2StorageUserDefaults.h; sourceTree = "<group>"; };
 		OBJ_24 /* SPTIabTCFv2Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTIabTCFv2Types.h; sourceTree = "<group>"; };
 		OBJ_25 /* SPTIabPublisherRestriction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTIabPublisherRestriction.h; sourceTree = "<group>"; };
-		OBJ_26 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/matthew/NE/IAB-TCF-V2-Objective-C/IAB-TCF-V2.xcodeproj/GeneratedModuleMap/IAB_TCF_V2_API/module.modulemap"; sourceTree = "<group>"; };
+		OBJ_26 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/matthew/NE/NECaptureiOS/NESDKiOS/IAB-TCF-V2-Objective-C/IAB-TCF-V2.xcodeproj/GeneratedModuleMap/IAB_TCF_V2_API/module.modulemap"; sourceTree = "<group>"; };
 		OBJ_28 /* SPTIabTCFUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPTIabTCFUtils.m; sourceTree = "<group>"; };
 		OBJ_30 /* SPTIabTCFConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTIabTCFConstants.h; sourceTree = "<group>"; };
 		OBJ_31 /* SPTIabTCFUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTIabTCFUtils.h; sourceTree = "<group>"; };
-		OBJ_32 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/matthew/NE/IAB-TCF-V2-Objective-C/IAB-TCF-V2.xcodeproj/GeneratedModuleMap/IAB_TCF_V2_Utils/module.modulemap"; sourceTree = "<group>"; };
+		OBJ_32 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/matthew/NE/NECaptureiOS/NESDKiOS/IAB-TCF-V2-Objective-C/IAB-TCF-V2.xcodeproj/GeneratedModuleMap/IAB_TCF_V2_Utils/module.modulemap"; sourceTree = "<group>"; };
 		OBJ_35 /* DecodeV1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeV1Tests.swift; sourceTree = "<group>"; };
 		OBJ_36 /* DecodeV2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeV2Tests.swift; sourceTree = "<group>"; };
 		OBJ_37 /* StringDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDecoderTests.swift; sourceTree = "<group>"; };
 		OBJ_38 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
-		OBJ_43 /* DerivedData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DerivedData; sourceTree = SOURCE_ROOT; };
-		OBJ_44 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* SPTIabPublisherRestriction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPTIabPublisherRestriction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_61 /* Frameworks */ = {
+		OBJ_60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_62 /* IAB_TCF_V2_Utils.framework in Frameworks */,
+				OBJ_61 /* IAB_TCF_V2_Utils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_74 /* Frameworks */ = {
+		OBJ_73 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_75 /* IAB_TCF_V2_API.framework in Frameworks */,
-				OBJ_76 /* IAB_TCF_V2_Utils.framework in Frameworks */,
+				OBJ_74 /* IAB_TCF_V2_API.framework in Frameworks */,
+				OBJ_75 /* IAB_TCF_V2_Utils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_84 /* Frameworks */ = {
+		OBJ_83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
@@ -210,23 +220,23 @@
 		OBJ_39 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				"IAB-TCF-V2::IAB-TCF-V2-API::Product" /* IAB_TCF_V2_API.framework */,
 				"IAB-TCF-V2::IAB-TCF-V2-Utils::Product" /* IAB_TCF_V2_Utils.framework */,
 				"IAB-TCF-V2::IAB-TCF-V2-Tests::Product" /* IAB_TCF_V2_Tests.xctest */,
-				"IAB-TCF-V2::IAB-TCF-V2-API::Product" /* IAB_TCF_V2_API.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 = {
+		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_33 /* Tests */,
 				OBJ_39 /* Products */,
-				OBJ_43 /* DerivedData */,
-				OBJ_44 /* README.md */,
+				OBJ_43 /* README.md */,
 			);
+			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -258,15 +268,15 @@
 /* Begin PBXNativeTarget section */
 		"IAB-TCF-V2::IAB-TCF-V2-API" /* IAB-TCF-V2-API */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_51 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-API" */;
+			buildConfigurationList = OBJ_50 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-API" */;
 			buildPhases = (
-				OBJ_54 /* Sources */,
-				OBJ_61 /* Frameworks */,
+				OBJ_53 /* Sources */,
+				OBJ_60 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_63 /* PBXTargetDependency */,
+				OBJ_62 /* PBXTargetDependency */,
 			);
 			name = "IAB-TCF-V2-API";
 			productName = IAB_TCF_V2_API;
@@ -275,16 +285,16 @@
 		};
 		"IAB-TCF-V2::IAB-TCF-V2-Tests" /* IAB-TCF-V2-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_66 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-Tests" */;
+			buildConfigurationList = OBJ_65 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-Tests" */;
 			buildPhases = (
-				OBJ_69 /* Sources */,
-				OBJ_74 /* Frameworks */,
+				OBJ_68 /* Sources */,
+				OBJ_73 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				OBJ_76 /* PBXTargetDependency */,
 				OBJ_77 /* PBXTargetDependency */,
-				OBJ_78 /* PBXTargetDependency */,
 			);
 			name = "IAB-TCF-V2-Tests";
 			productName = IAB_TCF_V2_Tests;
@@ -293,10 +303,10 @@
 		};
 		"IAB-TCF-V2::IAB-TCF-V2-Utils" /* IAB-TCF-V2-Utils */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_79 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-Utils" */;
+			buildConfigurationList = OBJ_78 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-Utils" */;
 			buildPhases = (
-				OBJ_82 /* Sources */,
-				OBJ_84 /* Frameworks */,
+				OBJ_81 /* Sources */,
+				OBJ_83 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,9 +319,9 @@
 		};
 		"IAB-TCF-V2::SwiftPMPackageDescription" /* IAB-TCF-V2PackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_86 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2PackageDescription" */;
+			buildConfigurationList = OBJ_85 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2PackageDescription" */;
 			buildPhases = (
-				OBJ_89 /* Sources */,
+				OBJ_88 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -337,7 +347,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5;
+			mainGroup = OBJ_5 /*  */;
 			productRefGroup = OBJ_39 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -348,89 +358,120 @@
 				"IAB-TCF-V2::IAB-TCF-V2-Utils" /* IAB-TCF-V2-Utils */,
 				"IAB-TCF-V2::SwiftPMPackageDescription" /* IAB-TCF-V2PackageDescription */,
 				"IAB-TCF-V2::IAB-TCF-V2PackageTests::ProductTarget" /* IAB-TCF-V2PackageTests */,
+				3442F64B25587A80001C3BBF /* IAB TCF Fat Binary */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3442F65825587A9B001C3BBF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#!/bin/sh\n\nSIMULATOR_OUTPUT_FOLDER=${CONFIGURATION_BUILD_DIR}/../${CONFIGURATION}-iphonesimulator\nDEVICE_OUTPUT_FOLDER=${CONFIGURATION_BUILD_DIR}/../${CONFIGURATION}-iphoneos\n\n# Merge together & build fat binary\necho \"Simulator Output: ${SIMULATOR_OUTPUT_FOLDER}\"\necho \"Device Output: ${DEVICE_OUTPUT_FOLDER}\"\n\nBINARY_NAME=\"IAB_TCF_V2_API\"\nFRAMEWORK_NAME=\"IAB_TCF_V2_API.framework\"\n\necho \"Copying Resources ${BUILT_PRODUCTS_DIR}/${FRAMEWORK_NAME}\"\nif [[ ${CONFIGURATION} == \"Debug\" ]]; then\n    output_cocoapod_loc=\"${PROJECT_DIR}/../nesdkiosdebugcocoapod/NumberEightCompiled.framework/Frameworks\";\nelse\n    output_cocoapod_loc=\"${PROJECT_DIR}/../nesdkioscocoapod/NumberEightCompiled.framework/Frameworks\";\nfi\n\necho \"Creating Fat Binary\"\nlipo -create \"${SIMULATOR_OUTPUT_FOLDER}/${FRAMEWORK_NAME}/${BINARY_NAME}\" \"${DEVICE_OUTPUT_FOLDER}/${FRAMEWORK_NAME}/${BINARY_NAME}\" -output ${output_cocoapod_loc}/${FRAMEWORK_NAME}/${BINARY_NAME}\n\necho \"Creating Fat Utils Binary\"\nBINARY_NAME=\"IAB_TCF_V2_Utils\"\nFRAMEWORK_NAME=\"IAB_TCF_V2_Utils.framework\"\nlipo -create \"${SIMULATOR_OUTPUT_FOLDER}/${FRAMEWORK_NAME}/${BINARY_NAME}\" \"${DEVICE_OUTPUT_FOLDER}/${FRAMEWORK_NAME}/${BINARY_NAME}\" -output ${output_cocoapod_loc}/${FRAMEWORK_NAME}/${BINARY_NAME}\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_54 /* Sources */ = {
+		OBJ_53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_55 /* SPTIabPublisherRestriction.m in Sources */,
-				OBJ_56 /* SPTIabTCFApi.m in Sources */,
-				OBJ_57 /* SPTIabTCFModel.m in Sources */,
-				OBJ_58 /* SPTIabTCFv1StorageUserDefaults.m in Sources */,
-				OBJ_59 /* SPTIabTCFv2StorageUserDefaults.m in Sources */,
-				OBJ_60 /* SPTIabTCStringParser.m in Sources */,
+				OBJ_54 /* SPTIabPublisherRestriction.m in Sources */,
+				OBJ_55 /* SPTIabTCFApi.m in Sources */,
+				OBJ_56 /* SPTIabTCFModel.m in Sources */,
+				OBJ_57 /* SPTIabTCFv1StorageUserDefaults.m in Sources */,
+				OBJ_58 /* SPTIabTCFv2StorageUserDefaults.m in Sources */,
+				OBJ_59 /* SPTIabTCStringParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_69 /* Sources */ = {
+		OBJ_68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_70 /* DecodeV1Tests.swift in Sources */,
-				OBJ_71 /* DecodeV2Tests.swift in Sources */,
-				OBJ_72 /* StringDecoderTests.swift in Sources */,
-				OBJ_73 /* TestUtils.swift in Sources */,
+				OBJ_69 /* DecodeV1Tests.swift in Sources */,
+				OBJ_70 /* DecodeV2Tests.swift in Sources */,
+				OBJ_71 /* StringDecoderTests.swift in Sources */,
+				OBJ_72 /* TestUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_82 /* Sources */ = {
+		OBJ_81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_83 /* SPTIabTCFUtils.m in Sources */,
+				OBJ_82 /* SPTIabTCFUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_89 /* Sources */ = {
+		OBJ_88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_90 /* Package.swift in Sources */,
+				OBJ_89 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_49 /* PBXTargetDependency */ = {
+		OBJ_48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "IAB-TCF-V2::IAB-TCF-V2-API" /* IAB-TCF-V2-API */;
-			targetProxy = 34C1704725519A4E0015CAAD /* PBXContainerItemProxy */;
+			targetProxy = 3442F64125587A72001C3BBF /* PBXContainerItemProxy */;
 		};
-		OBJ_63 /* PBXTargetDependency */ = {
+		OBJ_62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "IAB-TCF-V2::IAB-TCF-V2-Utils" /* IAB-TCF-V2-Utils */;
-			targetProxy = 34C1704425519A4D0015CAAD /* PBXContainerItemProxy */;
+			targetProxy = 3442F64025587A71001C3BBF /* PBXContainerItemProxy */;
+		};
+		OBJ_76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "IAB-TCF-V2::IAB-TCF-V2-API" /* IAB-TCF-V2-API */;
+			targetProxy = 3442F64425587A72001C3BBF /* PBXContainerItemProxy */;
 		};
 		OBJ_77 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "IAB-TCF-V2::IAB-TCF-V2-API" /* IAB-TCF-V2-API */;
-			targetProxy = 34C1704525519A4D0015CAAD /* PBXContainerItemProxy */;
-		};
-		OBJ_78 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
 			target = "IAB-TCF-V2::IAB-TCF-V2-Utils" /* IAB-TCF-V2-Utils */;
-			targetProxy = 34C1704625519A4D0015CAAD /* PBXContainerItemProxy */;
+			targetProxy = 3442F64525587A72001C3BBF /* PBXContainerItemProxy */;
 		};
-		OBJ_95 /* PBXTargetDependency */ = {
+		OBJ_94 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "IAB-TCF-V2::IAB-TCF-V2-Tests" /* IAB-TCF-V2-Tests */;
-			targetProxy = 34C1704D25519A4E0015CAAD /* PBXContainerItemProxy */;
+			targetProxy = 3442F64925587A72001C3BBF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		3442F64F25587A80001C3BBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3442F65025587A80001C3BBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					arm64,
-				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -443,15 +484,14 @@
 					"SWIFT_PACKAGE=1",
 					"DEBUG=1",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -459,10 +499,6 @@
 		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					arm64,
-				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
@@ -473,7 +509,6 @@
 					"$(inherited)",
 					"SWIFT_PACKAGE=1",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -481,29 +516,25 @@
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
-		OBJ_47 /* Debug */ = {
+		OBJ_46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
-		OBJ_48 /* Release */ = {
+		OBJ_47 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
-		OBJ_52 /* Debug */ = {
+		OBJ_51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BITCODE_GENERATION_MODE = bitcode;
 				DEFINES_MODULE = NO;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -518,24 +549,28 @@
 				INFOPLIST_FILE = "IAB-TCF-V2.xcodeproj/IAB_TCF_V2_API_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-fembed-bitcode",
 				);
+				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "IAB-TCF-V2-API";
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = NO;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				TARGET_NAME = "IAB-TCF-V2-API";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		OBJ_53 /* Release */ = {
+		OBJ_52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BITCODE_GENERATION_MODE = bitcode;
 				DEFINES_MODULE = NO;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -550,21 +585,26 @@
 				INFOPLIST_FILE = "IAB-TCF-V2.xcodeproj/IAB_TCF_V2_API_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-fembed-bitcode",
 				);
+				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "IAB-TCF-V2-API";
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = NO;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				TARGET_NAME = "IAB-TCF-V2-API";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
-		OBJ_67 /* Debug */ = {
+		OBJ_66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -581,17 +621,21 @@
 					"$(SRCROOT)/IAB-TCF-V2.xcodeproj/GeneratedModuleMap/IAB_TCF_V2_Utils",
 				);
 				INFOPLIST_FILE = "IAB-TCF-V2.xcodeproj/IAB_TCF_V2_Tests_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/IAB-TCF-V2.xcodeproj/GeneratedModuleMap/IAB_TCF_V2_API/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/IAB-TCF-V2.xcodeproj/GeneratedModuleMap/IAB_TCF_V2_Utils/module.modulemap";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = "IAB-TCF-V2-Tests";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		OBJ_68 /* Release */ = {
+		OBJ_67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -608,20 +652,23 @@
 					"$(SRCROOT)/IAB-TCF-V2.xcodeproj/GeneratedModuleMap/IAB_TCF_V2_Utils",
 				);
 				INFOPLIST_FILE = "IAB-TCF-V2.xcodeproj/IAB_TCF_V2_Tests_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/IAB-TCF-V2.xcodeproj/GeneratedModuleMap/IAB_TCF_V2_API/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/IAB-TCF-V2.xcodeproj/GeneratedModuleMap/IAB_TCF_V2_Utils/module.modulemap";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = "IAB-TCF-V2-Tests";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
-		OBJ_80 /* Debug */ = {
+		OBJ_79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BITCODE_GENERATION_MODE = bitcode;
 				DEFINES_MODULE = NO;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -635,6 +682,7 @@
 				INFOPLIST_FILE = "IAB-TCF-V2.xcodeproj/IAB_TCF_V2_Utils_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-fembed-bitcode",
@@ -647,13 +695,14 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				TARGET_NAME = "IAB-TCF-V2-Utils";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		OBJ_81 /* Release */ = {
+		OBJ_80 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BITCODE_GENERATION_MODE = bitcode;
 				DEFINES_MODULE = NO;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -667,6 +716,7 @@
 				INFOPLIST_FILE = "IAB-TCF-V2.xcodeproj/IAB_TCF_V2_Utils_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-fembed-bitcode",
@@ -679,36 +729,36 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				TARGET_NAME = "IAB-TCF-V2-Utils";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
-		OBJ_87 /* Debug */ = {
+		OBJ_86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 4.0.0";
-				SWIFT_VERSION = 4.0;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.0.0";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		OBJ_88 /* Release */ = {
+		OBJ_87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 4.0.0";
-				SWIFT_VERSION = 4.0;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.0.0";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
-		OBJ_93 /* Debug */ = {
+		OBJ_92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
 			name = Debug;
 		};
-		OBJ_94 /* Release */ = {
+		OBJ_93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
@@ -717,6 +767,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3442F64E25587A80001C3BBF /* Build configuration list for PBXAggregateTarget "IAB TCF Fat Binary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3442F64F25587A80001C3BBF /* Debug */,
+				3442F65025587A80001C3BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		OBJ_2 /* Build configuration list for PBXProject "IAB-TCF-V2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -726,56 +785,56 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_46 /* Build configuration list for PBXAggregateTarget "IAB-TCF-V2" */ = {
+		OBJ_45 /* Build configuration list for PBXAggregateTarget "IAB-TCF-V2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_47 /* Debug */,
-				OBJ_48 /* Release */,
+				OBJ_46 /* Debug */,
+				OBJ_47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_51 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-API" */ = {
+		OBJ_50 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-API" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_52 /* Debug */,
-				OBJ_53 /* Release */,
+				OBJ_51 /* Debug */,
+				OBJ_52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_66 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-Tests" */ = {
+		OBJ_65 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_67 /* Debug */,
-				OBJ_68 /* Release */,
+				OBJ_66 /* Debug */,
+				OBJ_67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_79 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-Utils" */ = {
+		OBJ_78 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2-Utils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_80 /* Debug */,
-				OBJ_81 /* Release */,
+				OBJ_79 /* Debug */,
+				OBJ_80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_86 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2PackageDescription" */ = {
+		OBJ_85 /* Build configuration list for PBXNativeTarget "IAB-TCF-V2PackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_87 /* Debug */,
-				OBJ_88 /* Release */,
+				OBJ_86 /* Debug */,
+				OBJ_87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_92 /* Build configuration list for PBXAggregateTarget "IAB-TCF-V2PackageTests" */ = {
+		OBJ_91 /* Build configuration list for PBXAggregateTarget "IAB-TCF-V2PackageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_93 /* Debug */,
-				OBJ_94 /* Release */,
+				OBJ_92 /* Debug */,
+				OBJ_93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
