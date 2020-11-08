@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 
 import PackageDescription
 
@@ -6,10 +6,12 @@ let package = Package(
     name: "IAB-TCF-V2",
     products: [
         .library(name: "IAB-TCF-V2", targets: ["IAB-TCF-V2-API"]),
+        .library(name: "IAB-TCF-V2-Static", type: .static, targets: ["IAB-TCF-V2-API"]),
+        .library(name: "IAB-TCF-V2-Dynamic", type: .dynamic, targets: ["IAB-TCF-V2-API"]),
     ],
     targets: [
-        .target(name: "IAB-TCF-V2-API", dependencies: ["IAB-TCF-V2-Utils"], path: "Sources/API"),
-        .target(name: "IAB-TCF-V2-Utils", path: "Sources/Utils"),
+        .target(name: "IAB-TCF-V2-API", dependencies: ["IAB-TCF-V2-Utils"], path: "Sources/API", cSettings: [.unsafeFlags(["-fembed-bitcode"])]),
+        .target(name: "IAB-TCF-V2-Utils", path: "Sources/Utils", cSettings: [.unsafeFlags(["-fembed-bitcode"])]),
         .testTarget(name: "IAB-TCF-V2-Tests", dependencies: ["IAB-TCF-V2-API"]),
     ]
 )
