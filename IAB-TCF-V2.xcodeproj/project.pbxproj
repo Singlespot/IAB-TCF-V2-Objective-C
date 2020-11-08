@@ -522,7 +522,6 @@
 					"$(inherited)",
 					"-fembed-bitcode",
 				);
-				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "IAB-TCF-V2-API";
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -555,7 +554,6 @@
 					"$(inherited)",
 					"-fembed-bitcode",
 				);
-				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "IAB-TCF-V2-API";
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";

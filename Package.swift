@@ -10,8 +10,8 @@ let package = Package(
         .library(name: "IAB-TCF-V2-Dynamic", type: .dynamic, targets: ["IAB-TCF-V2-API"]),
     ],
     targets: [
-        .target(name: "IAB-TCF-V2-API", dependencies: ["IAB-TCF-V2-Utils"], path: "Sources/API", cSettings: [.unsafeFlags(["-fembed-bitcode"])]),
-        .target(name: "IAB-TCF-V2-Utils", path: "Sources/Utils", cSettings: [.unsafeFlags(["-fembed-bitcode"])]),
+        .target(name: "IAB-TCF-V2-API", dependencies: ["IAB-TCF-V2-Utils"], path: "Sources/API"),
+        .target(name: "IAB-TCF-V2-Utils", path: "Sources/Utils"),
         .testTarget(name: "IAB-TCF-V2-Tests", dependencies: ["IAB-TCF-V2-API"]),
     ]
 )
