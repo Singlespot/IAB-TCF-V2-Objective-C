@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "IAB-TCF-V2",
+    platforms: [.iOS(.v9)],
     products: [
         .library(name: "IAB-TCF-V2", targets: ["IAB-TCF-V2-API"]),
         .library(name: "IAB-TCF-V2-Static", type: .static, targets: ["IAB-TCF-V2-API"]),
