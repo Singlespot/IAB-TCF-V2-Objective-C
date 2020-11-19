@@ -1,4 +1,0 @@
-module IAB_TCF_V2_StorageV2 {
-    umbrella "/Users/matthew/NE/IAB-TCF-V2-Objective-C/Sources/StorageV2/include"
-    export *
-}

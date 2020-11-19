@@ -1,4 +1,4 @@
 module IAB_TCF_V2_Utils {
-    umbrella "/Users/matthew/NE/NECaptureiOS/NESDKiOS/IAB-TCF-V2-Objective-C/Sources/Utils/include"
+    umbrella "/Users/matthew/NE/IAB-TCF-V2-Objective-C/Sources/Utils/include"
     export *
 }

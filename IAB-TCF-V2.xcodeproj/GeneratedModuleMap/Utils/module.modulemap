@@ -1,4 +1,0 @@
-module Utils {
-    umbrella "/Users/matthew/NE/IAB-TCF-V2-Objective-C/Sources/Utils/include"
-    export *
-}
