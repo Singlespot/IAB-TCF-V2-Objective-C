@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SPTIabTCStringParser : NSObject
 
-+ (SPTIabTCFModel *)parseConsentString:(NSString *)consentString;
++ (SPTIabTCFModel *)parseConsentString:(NSString *)consentString
+    NS_SWIFT_NAME(parse(consentString:));
 
 @end
 

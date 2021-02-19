@@ -22,7 +22,7 @@ NSString *const SPT_IABConsent_CMPPresentKey = @"IABConsent_CMPPresent";
 /*
  * Test method for uncoupling userDefaults
  */
-- (instancetype)initWithUserDefault:(NSUserDefaults *)userDefs
+- (instancetype)initWithUserDefaults:(NSUserDefaults *)userDefs
 {
     self = [super init];
     if (self) {
@@ -60,14 +60,14 @@ NSString *const SPT_IABConsent_CMPPresentKey = @"IABConsent_CMPPresent";
     return [self.userDefaults objectForKey:SPT_IABConsent_ConsentStringKey];
 }
 
--(void)setConsentString:(NSString *)consentString{
-    [self.userDefaults setObject:consentString forKey:SPT_IABConsent_ConsentStringKey];
+-(void)setConsentString:(NSString *)newConsentString {
+    [self.userDefaults setObject:newConsentString forKey:SPT_IABConsent_ConsentStringKey];
     [self.userDefaults synchronize];
 }
 
 -(SubjectToGDPR)subjectToGDPR {
     NSString *subjectToGDPRAsString = [self.userDefaults objectForKey:SPT_IABConsent_SubjectToGDPRKey];
-    
+
     if (subjectToGDPRAsString != nil) {
         if ([subjectToGDPRAsString isEqualToString:@"0"]) {
             return SubjectToGDPR_No;
@@ -81,13 +81,13 @@ NSString *const SPT_IABConsent_CMPPresentKey = @"IABConsent_CMPPresent";
     }
 }
 
--(void)setSubjectToGDPR:(SubjectToGDPR)subjectToGDPR {
+-(void)setSubjectToGDPR:(SubjectToGDPR)newSubjectToGDPR {
     NSString *subjectToGDPRAsString = nil;
 
-    if (subjectToGDPR == SubjectToGDPR_No || subjectToGDPR == SubjectToGDPR_Yes) {
-        subjectToGDPRAsString = [NSString stringWithFormat:@"%li", (long)subjectToGDPR];
+    if (newSubjectToGDPR == SubjectToGDPR_No || newSubjectToGDPR == SubjectToGDPR_Yes) {
+        subjectToGDPRAsString = [NSString stringWithFormat:@"%li", (long)newSubjectToGDPR];
     }
-    
+
     [self.userDefaults setObject:subjectToGDPRAsString forKey:SPT_IABConsent_SubjectToGDPRKey];
     [self.userDefaults synchronize];
 }
@@ -96,8 +96,8 @@ NSString *const SPT_IABConsent_CMPPresentKey = @"IABConsent_CMPPresent";
     return [[self.userDefaults objectForKey:SPT_IABConsent_CMPPresentKey] boolValue];
 }
 
--(void)setCmpPresent:(BOOL)cmpPresent {
-    [self.userDefaults setBool:cmpPresent forKey:SPT_IABConsent_CMPPresentKey];
+-(void)setCmpPresent:(BOOL)newCmpPresent {
+    [self.userDefaults setBool:newCmpPresent forKey:SPT_IABConsent_CMPPresentKey];
     [self.userDefaults synchronize];
 }
 
@@ -105,8 +105,8 @@ NSString *const SPT_IABConsent_CMPPresentKey = @"IABConsent_CMPPresent";
     return [self.userDefaults objectForKey:SPT_IABConsent_ParsedVendorConsentsKey];
 }
 
--(void)setParsedVendorConsents:(NSString *)parsedVendorConsents {
-    [self.userDefaults setObject:parsedVendorConsents forKey:SPT_IABConsent_ParsedVendorConsentsKey];
+-(void)setParsedVendorConsents:(NSString *)newParsedVendorConsents {
+    [self.userDefaults setObject:newParsedVendorConsents forKey:SPT_IABConsent_ParsedVendorConsentsKey];
     [self.userDefaults synchronize];
 }
 
@@ -114,8 +114,8 @@ NSString *const SPT_IABConsent_CMPPresentKey = @"IABConsent_CMPPresent";
     return [self.userDefaults objectForKey:SPT_IABConsent_ParsedPurposeConsentsKey];
 }
 
--(void)setParsedPurposeConsents:(NSString *)parsedPurposeConsents {
-    [self.userDefaults setObject:parsedPurposeConsents forKey:SPT_IABConsent_ParsedPurposeConsentsKey];
+-(void)setParsedPurposeConsents:(NSString *)newParsedPurposeConsents {
+    [self.userDefaults setObject:newParsedPurposeConsents forKey:SPT_IABConsent_ParsedPurposeConsentsKey];
     [self.userDefaults synchronize];
 }
 

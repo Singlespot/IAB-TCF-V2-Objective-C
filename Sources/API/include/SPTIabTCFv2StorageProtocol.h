@@ -35,7 +35,8 @@
 @property (retain, nonatomic) NSString * publisherTCParsedCustomPurposesLegitmateInterest;
 
 
-- (NSString *)publisherRestrictionsForPurposeId:(NSInteger)purposeId;
-- (void)setPublisherRestrictions:(NSString *)publisherRestriction ForPurposeId:(NSInteger)purposeId;
+- (NSString *)publisherRestrictionsForPurposeId:(NSInteger)purposeId
+    NS_SWIFT_NAME(publisherRestrictionsFor(purposeId:));
+- (void)setPublisherRestrictions:(NSString *)publisherRestriction ForPurposeId:(NSInteger)purposeId NS_REFINED_FOR_SWIFT;
 
 @end

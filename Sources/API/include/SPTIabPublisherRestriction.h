@@ -20,11 +20,18 @@ typedef NS_ENUM(NSInteger, PublisherRestrictionType) {
 @interface SPTIabPublisherRestriction : NSObject
 
 @property (assign, nonatomic) NSInteger purposeId;
-@property (assign, nonatomic) PublisherRestrictionType retrictionType;
+@property (assign, nonatomic) PublisherRestrictionType restrictionType;
 @property (retain, nonatomic) NSArray * vendorsIds;
 @property (retain, nonatomic) NSString * parsedVendors;
 
 - (NSDictionary *)asJson;
+
+-(instancetype)init: (NSNumber*)purposeId
+    restrictionType:(PublisherRestrictionType)restrictionType
+          vendorIds:(NSArray *)vendorIds
+      parsedVendors:(NSString * _Nullable)parsedVendors;
+
+-(bool)isEqual:(id)object;
 
 @end
 

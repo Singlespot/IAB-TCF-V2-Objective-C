@@ -10,8 +10,6 @@
 
 @implementation SPTIabTCFModel
 
-
-
 - (BOOL)isVendorConsentGivenFor:(int)vendorId {
     return [self booleanInBitString:self.parsedVendorsConsents forId:vendorId];
 }
@@ -121,7 +119,10 @@
     [result setValue:pubRestArray forKey:@"publisherRestrictions"];
 
     return result;
-    
+}
+
+-(NSUInteger)hash {
+    return [self asJson].hash;
 }
 
 @end

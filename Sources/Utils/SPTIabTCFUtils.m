@@ -17,14 +17,15 @@
     unsigned char *buffer = (unsigned char *)calloc(bufferLength, sizeof(unsigned char));
     int prevIndex = 0;
     
-    for (int byteIndex=0; byteIndex<length; byteIndex++) {
+    for (int byteIndex=0; byteIndex < length; byteIndex++) {
         char currentByte = byte[byteIndex];
         int bufferIndex = 8*(byteIndex+1);
         
-        while(bufferIndex > prevIndex) {
+        while(bufferIndex > prevIndex ) {
             if(currentByte & 0x01) {
                 buffer[--bufferIndex] = '1';
             } else {
+                // TODO: Heap overflow error here.
                 buffer[--bufferIndex] = '0';
             }
             currentByte >>= 1;
