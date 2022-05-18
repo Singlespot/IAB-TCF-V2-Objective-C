@@ -6,6 +6,7 @@
 //  Copyright © 2020 Alexandre Fortoul. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "SPTIabTCStringParser.h"
 #import "SPTIabTCFUtils.h"
 #import "SPTIabTCFConstants.h"
@@ -213,7 +214,7 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
     int a = 65; //first char
     int charBitLenght = 6;
     if (length%charBitLenght != 0) {
-        NSDebugLog(@"SPTIabConsentStringParser: Invalid 6 bit char encoded string (not a 6 multiple)");
+        NSLog(@"SPTIabConsentStringParser: Invalid 6 bit char encoded string (not a 6 multiple)");
         return @"";
     }
     int characterNumber = length/charBitLenght;
@@ -281,7 +282,7 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
         
         SPTIabPublisherRestriction *pubRestriction = [SPTIabPublisherRestriction new];
         pubRestriction.purposeId = purposeId;
-        pubRestriction.retrictionType = restrictType;
+        pubRestriction.restrictionType = restrictType;
         pubRestriction.vendorsIds = vendorVLDS.value;
         
         [pubRestrictions addObject:pubRestriction];
@@ -338,8 +339,9 @@ typedef NS_ENUM(NSInteger, SPTTcfDecoderVendorStringType) {
     int totalOffset = startIndex;
     
     NSMutableString *retString = [NSMutableString new];
-        
-    BOOL isRangeEncoding = binaryCharBuffer[totalOffset] != '0';
+
+    size_t len = strlen(binaryCharBuffer);
+    BOOL isRangeEncoding = totalOffset < len ? binaryCharBuffer[totalOffset] != '0' : false;
     totalOffset ++;
     
     if (!isRangeEncoding) {
